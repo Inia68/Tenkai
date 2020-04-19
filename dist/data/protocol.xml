@@ -7830,7 +7830,8 @@
             <packet id="0x11c" name="Unk11c" />
             <packet id="0x11e" name="Unk11e" />
             <packet id="0x120" name="Unk120" />
-            <packet id="0x121" name="Unk121" />
+			<packet id="0x121" name="Unk121" />
+			<packet id="0x122" name="RequestPledgeBonusRewardList" />
         </packetfamilly>
     </packetfamilly>
 </protocol>
