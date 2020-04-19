@@ -619,8 +619,8 @@ public class EnterWorld extends L2GameClientPacket
 					new ExShowScreenMessage(Config.WELCOME_MESSAGE_TEXT, Config.WELCOME_MESSAGE_TIME * 1000));
 		}
 
-        activeChar.sendPacket(new ExOneDayReceiveRewardList(activeChar));
-        activeChar.sendPacket(ExConnectedTimeAndGetTableReward.STATIC_PACKET);
+        // activeChar.sendPacket(new ExOneDayReceiveRewardList(activeChar));
+        // activeChar.sendPacket(ExConnectedTimeAndGetTableReward.STATIC_PACKET);
 
 		int birthday = activeChar.checkBirthDay();
 		if (birthday == 0)

@@ -86,7 +86,7 @@ public final class L2GamePacketHandler
 						(Class<? extends L2GameClientPacket>) obj;
 				try
 				{
-					msg = packetClass.newInstance();
+                    msg = packetClass.newInstance();
 				}
 				catch (Exception e)
 				{
@@ -96,7 +96,7 @@ public final class L2GamePacketHandler
 			}
 			else
 			{
-				printDebug(accumOpcodes, opcodeCount, buf, state, client);
+                printDebug(accumOpcodes, opcodeCount, buf, state, client);
 				break;
 			}
 		}
@@ -115,7 +115,7 @@ public final class L2GamePacketHandler
 		String opcode = "0x" + Integer.toHexString(opcodes[0]);
 		for (int i = 1; i < opcodeCount; i++)
 		{
-			opcode += ":0x" + Integer.toHexString(opcodes[i]);
+		    	opcode += ":0x" + Integer.toHexString(opcodes[i]);
 		}
 
 		int size = buf.remaining();

@@ -6938,7 +6938,7 @@
         <packet id="0xcc" name="RequestPledgePower" />
         <packet id="0xcd" name="RequestMakeMacro" />
         <packet id="0xce" name="RequestDeleteMacro" />
-        <packet id="0xcf" name="RequestBuyProcure" />
+        <packet id="0xcf" name="RequestBuyProcure" />j
         <packetfamilly id="0xd0" switchtype="h">
             <packet id="0x00" name="Dummy" />
             <packet id="0x01" name="RequestManorList" />
@@ -7788,7 +7788,8 @@
             <packet id="0xf6" name="RequestCompoundTwo" />
             <packet id="0xf7" name="RequestCompoundTwoRemove" />
             <packet id="0xf8" name="RequestCompoundCancel" />
-            <packet id="0xf9" name="RequestCompoundStart" />
+			<packet id="0xf9" name="RequestCompoundStart" />
+			<packet id="0xfa" name="RequestCompoundContinue" />
             <packet id="0xfd" name="RequestTargetActionMenu" />
             <packet id="0xfe" name="RequestExSendSelectedQuestZoneID">
                 <part name="?" type="d" />

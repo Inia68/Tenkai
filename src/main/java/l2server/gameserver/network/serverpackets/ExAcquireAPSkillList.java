@@ -37,8 +37,8 @@ public class ExAcquireAPSkillList extends L2GameServerPacket
 	{
 		writeD(_success ? 0x01 : 0x00);
 
-		writeD((int) AbilityTable.getInstance().getAdenaCostForReset());
-		writeD((int) AbilityTable.getInstance().getSpCostPerPoint(_player.getAbilityPoints()));
+		writeQ((int) AbilityTable.getInstance().getAdenaCostForReset());
+		writeQ((int) AbilityTable.getInstance().getSpCostPerPoint(_player.getAbilityPoints()));
 		writeD(AbilityTable.getInstance().getMaxPoints());
 		writeD(_player.getAbilityPoints());
 		writeD(_player.getSpentAbilityPoints());
