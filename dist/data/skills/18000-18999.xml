@@ -3608,7 +3608,7 @@
     </skill>
     <!-- Soulshot damage + 20% / Patk +9%. -->
     <!-- Soulshot damage + 20% / Patk +9%. -->
-    <skill id="18717" levels="1" name="Ruby">
+    <skill id="18717" levels="6" name="Ruby">
         <set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
@@ -3623,8 +3623,8 @@
         <set name="operateType" val="OP_ACTIVE" />
     </skill>
     <!--  Blessed Soulshot damage + 20% / mAtk + 13%. -->
-    <skill id="18719" levels="1" name="Sapphire">
-        <set name="target" val="TARGET_SELF" />
+    <skill id="18719" levels="6" name="Sapphire">
+		<set name="target" val="TARGET_SELF" />
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <set name="magicLvl" val="1" />

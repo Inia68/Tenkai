@@ -4123,13 +4123,13 @@
     <item id="47688" type="Armor" name="Ruby - Lv. 6" icon="icon.etc_bm_jewel_ruby_i00" defaultAction="equip"
           bodypart="jewel"
           immediateEffect="1" weight="5">
-        <skill id="18717" level="1"/>
+        <skill id="18717" level="6"/>
     </item>
     <!-- When equipped, increases Spiritshot and Blessed Spiritshot damage by 20% and M. Atk. By 13%. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
     <item id="47689" type="Armor" name="Sapphire - Lv. 6" icon="icon.etc_bm_jewel_sapphire_i00" defaultAction="equip"
           bodypart="jewel"
           immediateEffect="1" weight="5">
-        <skill id="18719" level="1"/>
+        <skill id="18719" level="6"/>
     </item>
     <!-- When equipped, PvP incoming damage decreases by 15% and cancels the attacker's target. Effect does not stack with additional jewels of the same type. Equipping various Greater Jewels will grant additional effects. -->
     <item id="47690" type="Armor" name="Obsidian - Lv. 6" icon="icon.etc_bm_jewel_obsidian_i00" defaultAction="equip"

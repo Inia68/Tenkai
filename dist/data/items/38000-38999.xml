@@ -5120,9 +5120,9 @@
           defaultAction="equip"
           bodypart="brooch" immediateEffect="1" weight="10" isTradable="false" isDropable="false" isSellable="false">
         <baseAdd stat="mDef" val="87" />
-        <skill id="13658" level="1" /> <!-- La Vie En Rose's Brilliant Brooch -->
-        <skill id="13661" level="1" /> <!-- La Vie En Rose's Brilliant Brooch -->
-    </item>
+		<skill id="13658" level="1" /> <!-- La Vie En Rose's Brilliant Brooch -->
+		<skill id="13661" level="1" /> <!-- La Vie En Rose's Brilliant Brooch -->
+	</item>
     <!-- Test Jewel -->
     <item id="38769" type="Armor" name="Test: Jewel Lv.1 - 1" icon="icon.etc_bm_jewel_jade_i00" defaultAction="equip"
           bodypart="rhand"
