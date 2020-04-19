@@ -1,0 +1,2 @@
+Welcome to L2Tenkai !
+New command: ".tryon". Check it out!
