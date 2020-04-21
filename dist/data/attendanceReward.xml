@@ -1,0 +1,10 @@
+<list>
+        <prizeCategory index="0">
+            <item id="22727" amount="1"/> <!-- Japanese Sword Appearance Stone -->
+            <item id="22728" amount="1"/> <!-- Japanese Dagger Appearance Stone -->
+       	</prizeCategory>
+	<prizeCategory index="1">
+		<item id="22727" amount="2"/> <!-- Japanese Sword Appearance Stone -->
+		<item id="22728" amount="3"/> <!-- Japanese Dagger Appearance Stone -->
+	</prizeCategory>
+</list>
