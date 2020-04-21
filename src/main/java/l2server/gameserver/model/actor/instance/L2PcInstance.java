@@ -10392,7 +10392,7 @@ public class L2PcInstance extends L2Playable {
                 rewardIndex = 0;
             }
         } else {
-            sendSysMessage("Attendance already claimed.");
+            sendMessage("Attendance already claimed.");
         }
 
         return new AttendanceInfoHolder(rewardIndex, canBeRewarded);

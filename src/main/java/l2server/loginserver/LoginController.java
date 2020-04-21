@@ -895,7 +895,7 @@ public class LoginController
 		{
 			con = L2DatabaseFactory.getInstance().getConnection();
 			PreparedStatement statement =
-					con.prepareStatement("SELECT login, expiryTime FROM auth_sessions WHERE `key`=?");
+					con.prepareStatement("SELECT login, expiryTime FROM auth_session WHERE `key`=?");
 			statement.setString(1, sessionKey);
 			ResultSet rset = statement.executeQuery();
 			if (rset.next())

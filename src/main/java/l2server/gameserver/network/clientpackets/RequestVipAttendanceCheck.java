@@ -50,7 +50,7 @@ public class RequestVipAttendanceCheck extends L2GameClientPacket
         if (player.getUptime() < (rewardDelay * 60 * 1000))
         {
             // player.sendPacket(SystemMessageId.YOU_DO_NOT_MEET_THE_LEVEL_REQUIREMENTS_TO_RECEIVE_THE_ATTENDANCE_REWARD_PLEASE_CHECK_THE_REQUIRED_LEVEL_YOU_CAN_REDEEM_YOUR_REWARD_30_MINUTES_AFTER_LOGGING_IN);
-            player.sendSysMessage("You can redeem your reward " + rewardDelay + " minutes after logging in.");
+            player.sendMessage("You can redeem your reward " + rewardDelay + " minutes after logging in.");
             return;
         }
 

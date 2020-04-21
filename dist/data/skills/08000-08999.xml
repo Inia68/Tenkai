@@ -10532,13 +10532,13 @@
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <addPercent stat="pvpPhysDmg" val="10" />
-            <addPercent stat="pvpMagicalDmg" val="10" />
-            <addPercent stat="pvpPhysSkillsDmg" val="10" />
+            <addPercent stat="pvpPhysDmg" val="15" />
+            <addPercent stat="pvpMagicalDmg" val="15" />
+            <addPercent stat="pvpPhysSkillsDmg" val="15" />
             <addPercent stat="maxHp" val="30" />
             <addPercent stat="maxMp" val="30" />
             <addPercent stat="maxCp" val="30" />
-            <addPercent stat="pAtkSpd" val="15" />
+            <addPercent stat="pAtkSpd" val="20" />
             <add stat="rCrit" val="100" />
             <addPercent stat="pSkillCritRate" val="30" />
             <addPercent stat="pSkillCritDmg" val="30" />
@@ -10554,13 +10554,13 @@
             <addPercent stat="pvpPhysDmg" val="30" />
             <addPercent stat="pvpMagicalDmg" val="30" />
             <addPercent stat="pvpPhysSkillsDmg" val="30" />
-			<addPercent stat="pvePhysDmg" val="15" />
-			<addPercent stat="pveMagicalDmg" val="15" />
-			<addPercent stat="pvePhysSkillsDmg" val="15" />
+			<addPercent stat="pvePhysDmg" val="30" />
+			<addPercent stat="pveMagicalDmg" val="30" />
+			<addPercent stat="pvePhysSkillsDmg" val="30" />
             <addPercent stat="maxHp" val="50" />
             <addPercent stat="maxMp" val="50" />
             <addPercent stat="maxCp" val="50" />
-            <addPercent stat="pAtkSpd" val="25" />
+            <addPercent stat="pAtkSpd" val="40" />
             <add stat="rCrit" val="500" />
             <addPercent stat="pSkillCritRate" val="50" />
             <addPercent stat="pSkillCritDmg" val="50" />
@@ -10573,13 +10573,13 @@
         <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
         <for>
-            <addPercent stat="pvpPhysDmg" val="10" />
-            <addPercent stat="pvpMagicalDmg" val="10" />
-            <addPercent stat="pvpPhysSkillsDmg" val="10" />
+            <addPercent stat="pvpPhysDmg" val="15" />
+            <addPercent stat="pvpMagicalDmg" val="15" />
+            <addPercent stat="pvpPhysSkillsDmg" val="15" />
             <addPercent stat="maxHp" val="30" />
             <addPercent stat="maxMp" val="30" />
             <addPercent stat="maxCp" val="30" />
-            <addPercent stat="mAtkSpd" val="15" />
+            <addPercent stat="mAtkSpd" val="20" />
             <add stat="mCritRate" val="100" />
             <addPercentBase stat="mCritRate" val="30" />
             <addPercent stat="mCritDmg" val="30" />
@@ -10595,13 +10595,13 @@
             <addPercent stat="pvpPhysDmg" val="30" />
             <addPercent stat="pvpMagicalDmg" val="30" />
             <addPercent stat="pvpPhysSkillsDmg" val="30" />
-			<addPercent stat="pvePhysDmg" val="15" />
-			<addPercent stat="pveMagicalDmg" val="15" />
-			<addPercent stat="pvePhysSkillsDmg" val="15" />
+			<addPercent stat="pvePhysDmg" val="30" />
+			<addPercent stat="pveMagicalDmg" val="30" />
+			<addPercent stat="pvePhysSkillsDmg" val="30" />
             <addPercent stat="maxHp" val="50" />
             <addPercent stat="maxMp" val="50" />
             <addPercent stat="maxCp" val="50" />
-            <addPercent stat="mAtkSpd" val="25" />
+            <addPercent stat="mAtkSpd" val="40" />
             <add stat="mCritRate" val="500" />
             <addPercentBase stat="mCritRate" val="50" />
             <addPercent stat="mCritDmg" val="50" />

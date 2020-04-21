@@ -65,7 +65,7 @@ public final class L2LoginPacketHandler implements IPacketHandler<L2LoginClient>
 					case 0x00:
 						packet = new RequestAuthLogin();
 						break;
-					case 0x12:
+                    case 0x12:
 						packet = new RequestAuthLogin2();
 						break;
 					default:
