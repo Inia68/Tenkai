@@ -2675,9 +2675,6 @@
     <item id="23446" type="Armor" name="Russian Navy Cap" icon="BranchSys3.icon1.g_hair_peakless_cap_m"
           defaultAction="equip"
           bodypart="hairall" immediateEffect="1" weight="13">
-        <cond msgId="1518">
-            <player sex="2" />
-        </cond>
     </item>
     <!-- Cloak commemorating Lineage II's 4th anniversary. Elaborately embroidered. -->
     <item id="23447" type="Armor" name="Russian Commemorative Cloak" icon="BranchSys3.icon1.g_cloak_anniversary"

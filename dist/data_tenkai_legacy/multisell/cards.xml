@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Tenkai Event Manager -->
+<list xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" ns0:noNamespaceSchemaLocation="multisell.xsd">
+	<!-- Level 1 -->
+    <item>
+        <ingredient id="37571" count="1" /> <!-- Antharas Card -->
+        <production id="28486" count="1" /> <!-- Radiant Brooch Lv1 -->
+    </item>
+	<item>
+		<ingredient id="37572" count="1" /> <!-- Valakas Card -->
+		<production id="28486" count="1" /> <!-- Radiant Brooch Lv1 -->
+	</item>
+	<item>
+		<ingredient id="37573" count="1" /> <!-- Lindvior Card -->
+		<production id="28486" count="1" /> <!-- Radiant Brooch Lv1 -->
+	</item>
+	<!-- Level 2 -->
+	<item>
+		<ingredient id="37571" count="1" /> <!-- Antharas Card -->
+		<ingredient id="28486" count="1" /> <!-- Radiant Brooch Lv1 -->
+		<ingredient id="28484" count="1" /> <!-- Brooch Spirit Stone -->
+		<production id="28487" count="1" /> <!-- Radiant Brooch Lv2 -->
+	</item>
+	<item>
+		<ingredient id="37572" count="1" /> <!-- Valakas Card -->
+		<ingredient id="28486" count="1" /> <!-- Radiant Brooch Lv1 -->
+		<ingredient id="28484" count="1" /> <!-- Brooch Spirit Stone -->
+		<production id="28487" count="1" /> <!-- Radiant Brooch Lv2 -->
+	</item>
+	<item>
+		<ingredient id="37573" count="1" /> <!-- Lindvior Card -->
+		<ingredient id="28486" count="1" /> <!-- Radiant Brooch Lv1 -->
+		<ingredient id="28484" count="1" /> <!-- Brooch Spirit Stone -->
+		<production id="28487" count="1" /> <!-- Radiant Brooch Lv2 -->
+	</item>
+	<!-- Level 3 -->
+	<item>
+		<ingredient id="37571" count="1" /> <!-- Antharas Card -->
+		<ingredient id="28487" count="1" /> <!-- Radiant Brooch Lv2 -->
+		<ingredient id="28485" count="1" /> <!-- Brooch Spirit Stone Rare -->
+		<production id="28488" count="1" /> <!-- Radiant Brooch Lv3 -->
+	</item>
+	<item>
+		<ingredient id="37572" count="1" /> <!-- Valakas Card -->
+		<ingredient id="28487" count="1" /> <!-- Radiant Brooch Lv2 -->
+		<ingredient id="28485" count="1" /> <!-- Brooch Spirit Stone Rare -->
+		<production id="28488" count="1" /> <!-- Radiant Brooch Lv3 -->
+	</item>
+	<item>
+		<ingredient id="37573" count="1" /> <!-- Lindvior Card -->
+		<ingredient id="28487" count="1" /> <!-- Radiant Brooch Lv2 -->
+		<ingredient id="28485" count="1" /> <!-- Brooch Spirit Stone Rare -->
+		<production id="28488" count="1" /> <!-- Radiant Brooch Lv3 -->
+	</item>
+
+
+
+</list>

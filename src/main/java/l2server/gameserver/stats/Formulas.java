@@ -4814,6 +4814,9 @@ public final class Formulas
 					case 152: // Tyrr Duelist
 						multiplier *= 0.9;
 						break;
+                    case 154: // Tyrr Titan
+                        multiplier *= 1.1;
+                        break;
 					case 166: // Feoh Archmage
 						multiplier *= 1.5;
 						break;
@@ -4830,7 +4833,7 @@ public final class Formulas
 						multiplier *= 1.2;
 						break;
 					case 189: // Sayha's Seer
-						multiplier *= 1.2;
+						multiplier *= 1.3;
 						break;
 				}
 
@@ -4876,10 +4879,10 @@ public final class Formulas
 						multiplier *= 1.2;
 						break;
 					case 188: // Eviscerator
-						//multiplier *= 0.8;
+						multiplier *= 1.0;
 						break;
 					case 189: // Sayha's Seer
-						//multiplier *= 1.4;
+						multiplier *= 1.0;
 						break;
 				}
 			}
@@ -4912,7 +4915,7 @@ public final class Formulas
 							multiplier *= 1.6;
 							break;
 						case 140: // Tyrr Warrior
-							multiplier *= 0.9;
+							multiplier *= 1.0;
 							break;
 						case 141: //Othell Rogue
 							multiplier *= 1.5;

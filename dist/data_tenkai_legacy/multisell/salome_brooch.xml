@@ -4,4 +4,22 @@
         <ingredient count="20000000" id="57" /> <!-- Adena -->
         <production id="28358" count="1" /> <!-- Brooch Lv6 -->
     </item>
+	<!-- Blue Cat's Eye - Lv. 5 -->
+	<item>
+		<ingredient id="57" count="10000000" />
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production id="47686" count="1" />
+	</item>
+	<!-- Red Cat's Eye - Lv. 5 -->
+	<item>
+		<ingredient id="57" count="10000000" />
+		<ingredient count="5" id="37559" /> <!-- Shiny Coin -->
+		<production id="47681" count="1" />
+	</item>
+	<!-- Greater Amethyst -->
+	<item>
+		<ingredient id="57" count="30000000" />
+		<ingredient count="30" id="37559" /> <!-- Shiny Coin -->
+		<production id="28377" count="1" />
+	</item>
 </list>

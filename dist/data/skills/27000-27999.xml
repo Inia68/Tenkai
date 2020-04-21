@@ -3539,4 +3539,32 @@
             <override stat="jewelry" val="6" />
         </for>
     </skill>
+	<skill id="27832" levels="3" name="La Vie En Rose Radiant Brooch">
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="BUFF" />
+		<set name="operateType" val="OP_PASSIVE" />
+		<table name="#MEN">0 0 2</table>
+		<table name="#WIT">0 0 2</table>
+		<table name="#CON">0 0 2</table>
+		<table name="#INT">0 0 2</table>
+		<table name="#DEX">0 0 2</table>
+		<table name="#STR">0 0 2</table>
+		<table name="#LUC">0 0 2</table>
+		<table name="#CHA">0 1 2</table>
+		<table name="#CP">0 0 12</table>
+		<for>
+			<add stat="inventoryLimit" val="12" />
+			<override stat="jewelry" val="6" />
+			<baseAdd stat="MEN" val="#MEN" />
+			<baseAdd stat="WIT" val="#WIT" />
+			<baseAdd stat="CON" val="#CON" />
+			<baseAdd stat="INT" val="#INT" />
+			<baseAdd stat="DEX" val="#DEX" />
+			<baseAdd stat="STR" val="#STR" />
+			<baseAdd stat="LUC" val="#LUC" />
+			<baseAdd stat="CHA" val="#CHA" />
+			<addPercent stat="maxCp" val="#CP" />
+		</for>
+	</skill>
+
 </list>

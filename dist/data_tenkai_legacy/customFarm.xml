@@ -146,22 +146,28 @@
 		<itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
 		<itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
 		<itemDrop itemId="36515" min="26" max="38" chance="75" /> <!-- Elcyum -->
-		<itemDrop itemId="37559" min="1" max="1" chance="5" /> <!-- Shiny Coin -->
+		<itemDrop itemId="37559" min="5" max="10" chance="100" /> <!-- Shiny Coin -->
+		<itemDrop itemId="28485" min="1" max="1" chance="2" /> <!-- Brooch Spirit Stone Rare  -->
+		<itemDrop itemId="28484" min="1" max="1" chance="5" /> <!-- Brooch Spirit Stone  -->
 	</customFarm>
 	<customFarm farmZone="cassius" overrideDrops="true">  <!-- Wind Cassius -->
 		<itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
 		<itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
 		<itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
 		<itemDrop itemId="36515" min="15" max="29" chance="75" /> <!-- Elcyum -->
-		<itemDrop itemId="37559" min="1" max="1" chance="3" /> <!-- Shiny Coin -->
+		<itemDrop itemId="37559" min="3" max="8" chance="100" /> <!-- Shiny Coin -->
+		<itemDrop itemId="28485" min="1" max="1" chance="1" /> <!-- Brooch Spirit Stone Rare  -->
+		<itemDrop itemId="28484" min="1" max="1" chance="3" /> <!-- Brooch Spirit Stone  -->
 	</customFarm>
 	<customFarm farmZone="terakan" overrideDrops="true">   <!-- Earth Terakan -->
 		<itemDrop itemId="36550" min="20" max="70" chance="80" /> <!-- Weapon Fragment (Top-grade) -->
 		<itemDrop itemId="36545" min="20" max="70" chance="80" /> <!-- Durandil Wire -->
 		<itemDrop itemId="36565" min="20" max="70" chance="80" /> <!-- Exquisite Synthetic Cokes -->
 		<itemDrop itemId="36515" min="8" max="17" chance="75" /> <!-- Elcyum -->
+		<itemDrop itemId="37559" min="1" max="5" chance="100" /> <!-- Shiny Coin -->
+		<itemDrop itemId="28485" min="1" max="1" chance="0" /> <!-- Brooch Spirit Stone Rare  -->
+		<itemDrop itemId="28484" min="1" max="1" chance="2" /> <!-- Brooch Spirit Stone  -->
 	</customFarm>
-
 	<customFarm farmZone="raider_crossroads"
                 adjustDropsPerMob="23316"> <!-- Lvl: 99 | Strength: 19842 | Exp Score: 60 | Extremelly high attack | Good for scouts -->
         <itemDrop itemId="4357" min="58100" max="73900" chance="100" /> <!-- Silver Shilen -->

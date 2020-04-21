@@ -12422,7 +12422,7 @@
         <spawn x="25814" y="-139811" z="-800" heading="21630" respawn="60" />
         <spawn x="25983" y="-138491" z="-760" heading="62400" respawn="60" />
     </npc>
-    <npc id="23316" name="Nerva Orc Priest" level="99" type="L2Monster" atkRange="40" hpMax="1096245" hpReg="55.36"
+    <npc id="23316" name="Nerva Orc Priest" level="99" type="L2Monster" atkRange="40" hpMax="896245" hpReg="55.36"
          mpMax="28731"
          mpReg="37.55" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" exp="124437220" sp="59729" pAtk="2300000"
          mAtk="1000000"

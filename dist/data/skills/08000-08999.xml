@@ -10554,6 +10554,9 @@
             <addPercent stat="pvpPhysDmg" val="30" />
             <addPercent stat="pvpMagicalDmg" val="30" />
             <addPercent stat="pvpPhysSkillsDmg" val="30" />
+			<addPercent stat="pvePhysDmg" val="15" />
+			<addPercent stat="pveMagicalDmg" val="15" />
+			<addPercent stat="pvePhysSkillsDmg" val="15" />
             <addPercent stat="maxHp" val="50" />
             <addPercent stat="maxMp" val="50" />
             <addPercent stat="maxCp" val="50" />
@@ -10592,6 +10595,9 @@
             <addPercent stat="pvpPhysDmg" val="30" />
             <addPercent stat="pvpMagicalDmg" val="30" />
             <addPercent stat="pvpPhysSkillsDmg" val="30" />
+			<addPercent stat="pvePhysDmg" val="15" />
+			<addPercent stat="pveMagicalDmg" val="15" />
+			<addPercent stat="pvePhysSkillsDmg" val="15" />
             <addPercent stat="maxHp" val="50" />
             <addPercent stat="maxMp" val="50" />
             <addPercent stat="maxCp" val="50" />
