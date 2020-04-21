@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Ice Queen Castle - Freya">
     <activityTime val="120" />
     <allowSummon val="false" />
@@ -11,3 +13,4 @@
         <door doorId="23140101" />
     </doorlist>
 </instance>
+</list>

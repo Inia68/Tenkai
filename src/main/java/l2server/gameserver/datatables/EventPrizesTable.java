@@ -47,6 +47,7 @@ public class EventPrizesTable implements Reloadable
 		load();
 	}
 
+
 	public void load()
 	{
 		_prizes.clear();

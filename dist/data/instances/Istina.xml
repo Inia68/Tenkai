@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Istina's Cavern">
     <activityTime val="120" />
     <allowSummon val="false" />
@@ -9,3 +11,4 @@
         <door doorId="14220101" />
     </doorlist>
 </instance>
+</list>

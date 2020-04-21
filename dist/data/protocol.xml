@@ -6100,10 +6100,10 @@
             </packet>
             <packet id="0x17c" name="ExAutoFishAvailable" />
             <packet id="0x17d" name="ExConfirmVipAttendanceCheck" />
-            <packet id="0x17e" name="ExShowEnsoulWindow" />
-            <packet id="0x17f" name="ExEnsoulResult" />
-            <packet id="0x180" name="ReceiveVipProductList" />
-            <packet id="0x181" name="ReceiveVipLuckyGameInfo" />
+            <packet id="0x17e" name="ExVipAttendanceList" />
+            <packet id="0x17f" name="ExConfirmVipAttendanceCheck" />
+            <packet id="0x180" name="ExShowEnsoulWindow" />
+            <packet id="0x181" name="ExEnsoulResult" />
             <packet id="0x182" name="ReceiveVipLuckyGameItemList" />
             <packet id="0x183" name="ReceiveVipLuckyGameResult" />
             <packet id="0x184" name="ReceiveVipInfo" />
@@ -7791,28 +7791,27 @@
 			<packet id="0xf9" name="RequestCompoundStart" />
 			<packet id="0xfa" name="RequestCompoundContinue" />
             <packet id="0xfd" name="RequestTargetActionMenu" />
-            <packet id="0xfe" name="RequestExSendSelectedQuestZoneID">
-                <part name="?" type="d" />
+            <packet id="0xfe" name="RequestTargetActionMenu">
             </packet>
-            <packet id="0xff" name="RequestAlchemySkillList" />
-            <packet id="0x100" name="RequestAlchemyTryMixCube" />
-            <packet id="0x101" name="RequestAlchemyConversion" />
-            <packet id="0x102" name="RequestSendExecutedUIEventsCount" />
-            <packet id="0x103" name="ExSendClientINI" />
-            <packet id="0x104" name="RequestExAutoFish" />
-            <packet id="0x105" name="RequestVipAttendanceItemList" />
-            <packet id="0x106" name="RequestVipAttendanceCheck" />
-            <packet id="0x107" name="RequestItemEnsoul">
-                <part name="targetItem" type="d" />
-                <part name="effectCount" type="c" id="1" />
-                <for id="1">
-                    <part name="stoneType" type="c" />
-                    <part name="stoneOrder" type="c" />
-                    <part name="stoneId" type="d" />
-                    <part name="effectId" type="d" />
-                </for>
-            </packet>
-            <packet id="0x108" name="RequestVipProductList" />
+            <packet id="0xff" name="RequestExSendSelectedQuestZoneID" />
+            <packet id="0x100" name="RequestAlchemySkillList" />
+            <packet id="0x101" name="RequestAlchemyTryMixCube" />
+            <packet id="0x102" name="RequestAlchemyConversion" />
+            <packet id="0x103" name="RequestSendExecutedUIEventsCount" />
+            <packet id="0x104" name="ExSendClientINI" />
+            <packet id="0x105" name="RequestExAutoFish" />
+			<packet id="0x106" name="RequestVipAttendanceItemList" />
+			<packet id="0x107" name="RequestVipAttendanceCheck" />
+			<packet id="0x108" name="RequestItemEnsoul">
+				<part name="targetItem" type="d" />
+				<part name="effectCount" type="c" id="1" />
+				<for id="1">
+					<part name="stoneType" type="c" />
+					<part name="stoneOrder" type="c" />
+					<part name="stoneId" type="d" />
+					<part name="effectId" type="d" />
+				</for>
+			</packet>
             <packet id="0x109" name="RequestVipLuckyGameInfo" />
             <packet id="0x10a" name="RequestVipLuckyGameItemList" />
             <packet id="0x10b" name="RequestVipLuckyGameBonus" />

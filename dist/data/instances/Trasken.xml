@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Earth Wyrm Cave">
     <activityTime val="120" />
     <allowSummon val="false" />
@@ -122,3 +124,4 @@
         <door doorId="22120001" />
     </doorlist>
 </instance>
+</list>

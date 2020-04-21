@@ -17,10 +17,7 @@ package l2server.gameserver.network.clientpackets;
 
 import l2server.Config;
 import l2server.L2DatabaseFactory;
-import l2server.gameserver.Announcements;
-import l2server.gameserver.GmListTable;
-import l2server.gameserver.LoginServerThread;
-import l2server.gameserver.TaskPriority;
+import l2server.gameserver.*;
 import l2server.gameserver.cache.HtmCache;
 import l2server.gameserver.communitybbs.CommunityBoard;
 import l2server.gameserver.datatables.AdminCommandAccessRights;
@@ -45,12 +42,7 @@ import l2server.gameserver.instancemanager.PetitionManager;
 import l2server.gameserver.instancemanager.QuestManager;
 import l2server.gameserver.instancemanager.SiegeManager;
 import l2server.gameserver.instancemanager.SurveyManager;
-import l2server.gameserver.model.L2Clan;
-import l2server.gameserver.model.L2ClanMember;
-import l2server.gameserver.model.L2ItemInstance;
-import l2server.gameserver.model.L2Object;
-import l2server.gameserver.model.L2Skill;
-import l2server.gameserver.model.L2World;
+import l2server.gameserver.model.*;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.stat.PcStat;
@@ -283,6 +275,20 @@ public class EnterWorld extends L2GameClientPacket
 					activeChar.setSiegeSide(siege.getCastle().getCastleId());
 				}
 			}
+
+            ThreadPoolManager.getInstance().scheduleGeneral(() ->
+            {
+                // Check if player can receive reward today.
+                final AttendanceInfoHolder attendanceInfo = activeChar.getAttendanceInfo();
+                if (attendanceInfo.isRewardAvailable())
+                {
+                    final int lastRewardIndex = attendanceInfo.getRewardIndex() + 1;
+                    activeChar.sendPacket(new ExShowScreenMessage("Your attendance day " + lastRewardIndex + " reward is ready.", 7000));
+                    activeChar.sendMessage("Your attendance day " + lastRewardIndex + " reward is ready.");
+                    activeChar.sendMessage("Click on General Menu -> Attendance Check.");
+                    activeChar.sendPacket(new ExVipAttendanceList(activeChar));
+                }
+            }, 15 * 60 * 1000);
 
 			for (FortSiege siege : FortSiegeManager.getInstance().getSieges())
 			{

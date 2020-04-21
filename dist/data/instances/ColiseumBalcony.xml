@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
 <instance name="Coliseum Balcony">
     <activityTime val="10" />
     <allowSummon val="false" />
 </instance>
+</list>

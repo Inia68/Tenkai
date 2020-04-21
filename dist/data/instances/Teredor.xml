@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Teredor">
     <activityTime val="40" />
     <allowSummon val="false" />
@@ -348,3 +350,4 @@
         <spawn npcId="18996" x="186761" y="-179169" z="-4624" heading="0" respawn="60" />
     </spawnlist>
 </instance>
+</list>

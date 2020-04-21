@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="HellboundTown" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="instance.xsd">
     <activityTime val="30" />
@@ -62,3 +64,4 @@
         <!-- <spawn npcId="22449" x="19424" y="253360" z="-2032" heading="16860" respawn="0" /> --> <!-- Amaskari -->
     </spawnlist>
 </instance>
+</list>

@@ -7,4 +7,24 @@
 		<item id="57" amount="2000000"/> <!-- Adena -->
 		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
 	</prizeCategory>
+	<prizeCategory index="2">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+	</prizeCategory>
+	<prizeCategory index="3">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+	</prizeCategory>
+	<prizeCategory index="4">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+	</prizeCategory>
+	<prizeCategory index="5">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+	</prizeCategory>
+	<prizeCategory index="6">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+	</prizeCategory>
 </list>

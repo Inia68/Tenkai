@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Octavis Raid Boss">
     <activityTime val="120" />
     <allowSummon val="false" />
@@ -15,3 +17,4 @@
         <door doorId="26210106" />
     </doorlist>
 </instance>
+</list>

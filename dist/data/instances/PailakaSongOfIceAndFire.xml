@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Pailaka (Forgotten Temple)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="instance.xsd">
     <activityTime val="60" />
@@ -124,3 +126,4 @@
         <spawn npcId="18616" x="-59210" y="179194" z="-4808" heading="0" respawn="0" onKillDelay="100" />
     </spawnlist>
 </instance>
+</list>

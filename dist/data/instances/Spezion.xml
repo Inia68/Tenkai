@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Prison Of Darkness">
     <activityTime val="60" />
     <allowSummon val="false" />
@@ -11,3 +13,4 @@
         <spawn npcId="32942" x="175076" y="143197" z="-11768" heading="25000" respawn="60" />
     </spawnlist>
 </instance>
+</list>

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Conquer A Castle">
     <activityTime val="60" />
     <allowSummon val="false" />
@@ -447,3 +449,4 @@
         <spawn npcId="80202" x="147463" y="1529" z="-373" heading="16384" respawn="0" />
     </spawnlist>
 </instance>
+</list>

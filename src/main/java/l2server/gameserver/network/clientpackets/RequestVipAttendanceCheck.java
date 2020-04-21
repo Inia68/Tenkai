@@ -22,7 +22,7 @@ import java.util.List;
 public class RequestVipAttendanceCheck extends L2GameClientPacket
 {
     private final boolean enabled = true;
-    private final int rewardDelay = 30;
+    private final int rewardDelay = 15;
 	@Override
 	public void readImpl()
 	{

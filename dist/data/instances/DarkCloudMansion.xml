@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<instance name="Dark Cloud Mansion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<list>
+	<instance name="Dark Cloud Mansion" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="instance.xsd">
     <activityTime val="30" />
     <allowSummon val="false" />
@@ -21,3 +22,4 @@
         <door doorId="24230013" />
     </doorlist>
 </instance>
+</list>

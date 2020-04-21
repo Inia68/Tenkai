@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<instance name="Nursery">
+<list>
+	<instance name="Nursery">
     <activityTime val="60" />
     <allowSummon val="false" />
     <emptyDestroyTime val="10" />
@@ -8,3 +9,4 @@
         <spawn npcId="33152" x="-185854" y="147197" z="-15302" heading="49151" respawn="20" /><!-- Tie -->
     </spawnlist>
 </instance>
+</list>

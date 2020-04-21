@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
 <instance name="CrystalCaverns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="instance.xsd">
     <activityTime val="90" />
@@ -35,3 +36,4 @@
         <door doorId="24220061" />
     </doorlist>
 </instance>
+</list>

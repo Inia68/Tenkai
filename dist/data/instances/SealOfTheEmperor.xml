@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Seal Of The Emperor">
     <activityTime val="60" />
     <allowSummon val="false" />
@@ -30,3 +32,4 @@
         <spawn npcId="80321" x="-83804" y="216754" z="-7520" heading="32768" respawn="60" />
     </spawnlist>
 </instance>
+</list>

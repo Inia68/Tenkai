@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Final Emperial Tomb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="instance.xsd">
     <activityTime val="120" />
@@ -30,3 +32,5 @@
         <door doorId="17130070" />
     </doorlist>
 </instance>
+
+</list>

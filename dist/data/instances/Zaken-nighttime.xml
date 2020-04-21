@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- id: 114 -->
+<list>
 <instance name="Cavern of the Pirate Captain (nightmare)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="instance.xsd">
     <activityTime val="360" />
@@ -158,3 +159,4 @@
         <spawn npcId="29026" x="56309" y="220445" z="-2980" heading="12291" respawn="10" />
     </spawnlist>
 </instance>
+</list>

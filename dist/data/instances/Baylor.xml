@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Baylor Warzone">
     <activityTime val="60" />
     <allowSummon val="false" />
@@ -34,3 +36,4 @@
         <door doorId="24220061" />
     </doorlist>
 </instance>
+</list>

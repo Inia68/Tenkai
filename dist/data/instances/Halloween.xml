@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
 <instance name="Halloween">
     <activityTime val="120" />
     <allowSummon val="false" />
@@ -29,3 +30,4 @@
         <spawn npcId="80348" x="153458" y="141757" z="-12741" heading="11873" respawn="60" />
     </spawnlist>
 </instance>
+</list>

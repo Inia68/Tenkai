@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Pailaka73_77" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="instance.xsd">
     <activityTime val="60" />
@@ -96,3 +98,4 @@
         <spawn npcId="32509" x="113745" y="-47565" z="-2593" heading="55710" respawn="0" />
     </spawnlist>
 </instance>
+</list>

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Rescue Of The Last Giant">
     <activityTime val="60" />
     <allowSummon val="false" />
@@ -19,3 +21,4 @@
         <spawn npcId="80299" x="-108320" y="206480" z="-10872" heading="49536" respawn="0" />
     </spawnlist>
 </instance>
+</list>

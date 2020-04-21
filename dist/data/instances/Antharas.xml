@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Antharas">
     <activityTime val="120" />
     <allowSummon val="false" />
@@ -234,3 +236,4 @@
         <spawn npcId="19138" x="178751" y="114771" z="-7710" heading="64496" respawn="0" />
     </spawnlist>
 </instance>
+</list>

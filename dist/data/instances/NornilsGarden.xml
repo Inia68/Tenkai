@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?
+<list>
+
 <instance name="Nornils Garden" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="instance.xsd">
     <activityTime val="60" />
@@ -241,3 +243,4 @@
         <spawn npcId="32262" x="-116926" y="87097" z="-12680" heading="0" respawn="0" />
     </spawnlist>
 </instance>
+</list>

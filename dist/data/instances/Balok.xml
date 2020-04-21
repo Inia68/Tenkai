@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<instance name="Crystal Prison">
+<list>
+	<instance name="Crystal Prison">
     <activityTime val="60" />
     <allowSummon val="false" />
     <emptyDestroyTime val="1200" />
@@ -34,3 +35,4 @@
         <door doorId="24220061" />
     </doorlist>
 </instance>
+</list>

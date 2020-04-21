@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<list>
+
 <instance name="Nornils Cave">
     <activityTime val="60" />
     <allowSummon val="false" />
@@ -12,3 +14,4 @@
     </doorlist>
 
 </instance>
+</list>

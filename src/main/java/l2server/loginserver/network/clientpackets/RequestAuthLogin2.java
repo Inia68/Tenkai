@@ -48,7 +48,7 @@ public class RequestAuthLogin2 extends L2LoginClientPacket
 		readC(); // ???
 		readH(); // ???
 		readD(); // ???
-		readString(); // ???
+        String deux = readString(); // ???
 		readH(); // ???
 		readD(); // ???
 		readD(); // ???
