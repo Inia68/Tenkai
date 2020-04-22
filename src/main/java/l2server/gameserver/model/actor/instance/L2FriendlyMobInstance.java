@@ -77,7 +77,7 @@ public class L2FriendlyMobInstance extends L2Attackable
         if ((killer != null) && killer.isAttackable())
         {
             // Delayed notification
-            EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(null, this, false), Containers.Npcs());
+            EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(null, this, false), Containers.Monsters());
         }
         return true;
     }

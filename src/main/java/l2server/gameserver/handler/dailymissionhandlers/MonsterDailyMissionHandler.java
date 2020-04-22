@@ -8,6 +8,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.event.Containers;
 import l2server.gameserver.model.event.EventType;
 import l2server.gameserver.model.event.impl.creature.npc.OnAttackableKill;
+import l2server.gameserver.model.event.impl.creature.player.OnPlayerLevelChanged;
 import l2server.gameserver.model.event.listeners.ConsumerEventListener;
 
 import java.util.ArrayList;

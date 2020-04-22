@@ -602,7 +602,7 @@ public class L2Attackable extends L2Npc
 			{
 				player.setHatersAmount(player.getHatersAmount() - 1);
 			}
-            EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(killer.getActingPlayer(), this, killer instanceof L2Playable), Containers.Players());
+            EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(killer.getActingPlayer(), this, killer instanceof L2Playable), Containers.Monsters());
 
         }
 

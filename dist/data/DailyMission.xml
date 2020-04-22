@@ -887,4 +887,46 @@
 			<item id="46919" count="1" />
 		</items>
 	</reward>
+
+	<reward id="232" reward_id="612" name="Monster Hunting: Master" requiredCompletion="20000" dailyReset="false">
+		<!-- Hunt 20000 monsters in any hunting ground. (A monster kill is only valid when XP was gained from it.) -->
+		<handler name="monster">
+			<param name="minLevel">1</param>
+			<param name="maxLevel">255</param>
+		</handler>
+		<items>
+			<item id="10650" count="5" />
+		</items>
+	</reward>
+	<reward id="233" reward_id="613" name="Monster Hunting: Profesionnal" requiredCompletion="10000" dailyReset="false">
+		<!-- Hunt 20000 monsters in any hunting ground. (A monster kill is only valid when XP was gained from it.) -->
+		<handler name="monster">
+			<param name="minLevel">1</param>
+			<param name="maxLevel">255</param>
+		</handler>
+		<items>
+			<item id="10650" count="5" />
+		</items>
+	</reward>
+	<reward id="234" reward_id="614" name="Monster Hunting: Casual" requiredCompletion="5000" dailyReset="false">
+		<!-- Hunt 20000 monsters in any hunting ground. (A monster kill is only valid when XP was gained from it.) -->
+		<handler name="monster">
+			<param name="minLevel">1</param>
+			<param name="maxLevel">255</param>
+		</handler>
+		<items>
+			<item id="10650" count="5" />
+		</items>
+	</reward>
+	<reward id="235" reward_id="615" name="Monster Hunting: Newbie" requiredCompletion="100" dailyReset="false">
+		<!-- Hunt 20000 monsters in any hunting ground. (A monster kill is only valid when XP was gained from it.) -->
+		<handler name="monster">
+			<param name="minLevel">1</param>
+			<param name="maxLevel">255</param>
+		</handler>
+		<items>
+			<item id="10650" count="5" />
+		</items>
+	</reward>
+
 </list>
