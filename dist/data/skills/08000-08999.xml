@@ -10540,7 +10540,8 @@
             <addPercent stat="maxCp" val="30" />
             <addPercent stat="pAtkSpd" val="20" />
             <add stat="rCrit" val="100" />
-            <addPercent stat="pSkillCritRate" val="30" />
+			<addPercent stat="pAtk" val="5" />
+			<addPercent stat="pSkillCritRate" val="30" />
             <addPercent stat="pSkillCritDmg" val="30" />
             <addPercent stat="pAtk-dragons" val="100" />
         </for>
@@ -10562,7 +10563,8 @@
             <addPercent stat="maxCp" val="50" />
             <addPercent stat="pAtkSpd" val="40" />
             <add stat="rCrit" val="500" />
-            <addPercent stat="pSkillCritRate" val="50" />
+			<addPercent stat="pAtk" val="10" />
+			<addPercent stat="pSkillCritRate" val="50" />
             <addPercent stat="pSkillCritDmg" val="50" />
             <addPercent stat="pAtk-dragons" val="300" />
         </for>
@@ -10602,8 +10604,10 @@
             <addPercent stat="maxMp" val="50" />
             <addPercent stat="maxCp" val="50" />
             <addPercent stat="mAtkSpd" val="40" />
-            <add stat="mCritRate" val="500" />
-            <addPercentBase stat="mCritRate" val="50" />
+			<addPercent stat="mAtk" val="10" />
+			<add stat="mCritRate" val="500" />
+			<addPercent stat="mAtk" val="5" />
+			<addPercentBase stat="mCritRate" val="50" />
             <addPercent stat="mCritDmg" val="50" />
             <addPercent stat="pAtk-dragons" val="300" />
         </for>
