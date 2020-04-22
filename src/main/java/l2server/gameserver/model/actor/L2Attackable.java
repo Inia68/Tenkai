@@ -603,8 +603,8 @@ public class L2Attackable extends L2Npc
 				player.setHatersAmount(player.getHatersAmount() - 1);
 			}
             EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(killer.getActingPlayer(), this, killer instanceof L2Playable), Containers.Monsters());
-
         }
+
 
 		// Notify the Quest Engine of the L2Attackable death if necessary
 		try

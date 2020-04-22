@@ -119,6 +119,9 @@ public class EffectMDamOverTime extends L2Effect
 
 		if (getEffector() instanceof L2PcInstance && getSkill().getId() == 11260) // Mark of Void
 		{
+		    if (getEffector().isDead()) {
+		        return false;
+            }
 			double heal = damage * (getEffected().getActingPlayer() == null ? 0.5 : 0.75);
 			double hp = getEffector().getCurrentHp();
 			double maxhp = getEffector().getMaxHp();

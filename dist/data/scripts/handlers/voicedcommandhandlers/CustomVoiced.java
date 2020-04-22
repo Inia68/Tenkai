@@ -490,7 +490,8 @@ public class CustomVoiced implements IVoicedCommandHandler
 		html += getStatHtm("Mental Prof", player.calcStat(Stats.DERANGEMENT_PROF, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Poison Prof", player.calcStat(Stats.POISON_PROF, 100, null, null) - 100, 0, true, "%");
 		html += getStatHtm("Bleed Prof", player.calcStat(Stats.BLEED_PROF, 100, null, null) - 100, 0, true, "%");
-		html += getStatHtm("Cancel Prof", player.calcStat(Stats.CANCEL_PROF, 100, null, null) - 100, 0, true, "%");
+        html += getStatHtm("Cancel Prof", player.calcStat(Stats.CANCEL_PROF, 100, null, null) - 100, 0, true, "%");
+
 
 		//Sharing stats
 		html += getStatHtm("Sharing P.Atk", player.calcStat(Stats.OWNER_PATK, 100, null, null) - 100, 0, true, "%");

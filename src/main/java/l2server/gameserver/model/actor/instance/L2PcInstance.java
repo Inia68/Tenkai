@@ -101,6 +101,10 @@ import l2server.gameserver.model.entity.Duel;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.entity.Siege;
+import l2server.gameserver.model.event.Containers;
+import l2server.gameserver.model.event.EventDispatcher;
+import l2server.gameserver.model.event.impl.creature.npc.OnAttackableKill;
+import l2server.gameserver.model.event.impl.creature.player.OnPlayerPvPKill;
 import l2server.gameserver.model.event.timers.TimerHolder;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
@@ -5884,6 +5888,10 @@ public class L2PcInstance extends L2Playable {
             L2PcInstance pk = killer.getActingPlayer();
             if (getEvent() != null) {
                 getEvent().onKill(killer, this);
+            }
+
+            if (killer instanceof L2PcInstance) {
+                EventDispatcher.getInstance().notifyEventAsync(new OnPlayerPvPKill(pk, this), Containers.Players());
             }
 
             //if (pk != null && Config.isServer(Config.TENKAI))
