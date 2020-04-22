@@ -15,6 +15,7 @@ import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Npc;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.event.ListenersContainer;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.CreatureSay;
@@ -40,7 +41,7 @@ import gnu.trove.TIntProcedure;
 /**
  * @author evill33t, GodKratos
  */
-public class Instance
+public class Instance extends ListenersContainer
 {
 	private int _id;
 	private String _name;

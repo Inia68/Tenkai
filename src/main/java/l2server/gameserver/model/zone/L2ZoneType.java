@@ -28,6 +28,7 @@ import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2BoatInstance;
 import l2server.gameserver.model.actor.instance.L2NpcInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.event.ListenersContainer;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.serverpackets.ExServerPrimitive;
 import l2server.gameserver.network.serverpackets.ExStartScenePlayer;
@@ -46,7 +47,7 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author durgus
  */
-public abstract class L2ZoneType
+public abstract class L2ZoneType extends ListenersContainer
 {
 	private final int _id;
 	protected L2ZoneForm _zone;

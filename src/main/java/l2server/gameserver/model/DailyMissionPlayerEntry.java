@@ -1,6 +1,7 @@
 package l2server.gameserver.model;
 
-public class DailyMissionPlayerEntry {
+public class DailyMissionPlayerEntry
+{
     private final int _objectId;
     private final int _rewardId;
     private DailyMissionStatus _status = DailyMissionStatus.NOT_AVAILABLE;
@@ -66,5 +67,4 @@ public class DailyMissionPlayerEntry {
     {
         _lastCompleted = lastCompleted;
     }
-
 }

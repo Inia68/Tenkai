@@ -37,6 +37,7 @@ import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.actor.instance.L2FortBallistaInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2StaticObjectInstance;
+import l2server.gameserver.model.event.ListenersContainer;
 import l2server.gameserver.model.zone.type.L2FortZone;
 import l2server.gameserver.model.zone.type.L2SiegeZone;
 import l2server.gameserver.network.SystemMessageId;
@@ -59,7 +60,7 @@ import java.util.logging.Level;
 
 import gnu.trove.TIntIntHashMap;
 
-public class Fort
+public class Fort extends ListenersContainer
 {
 	// =========================================================
 	// Data Field

@@ -16,14 +16,7 @@
 package handlers;
 
 import l2server.Config;
-import l2server.gameserver.handler.ActionHandler;
-import l2server.gameserver.handler.AdminCommandHandler;
-import l2server.gameserver.handler.BypassHandler;
-import l2server.gameserver.handler.ChatHandler;
-import l2server.gameserver.handler.ItemHandler;
-import l2server.gameserver.handler.SkillHandler;
-import l2server.gameserver.handler.UserCommandHandler;
-import l2server.gameserver.handler.VoicedCommandHandler;
+import l2server.gameserver.handler.*;
 import l2server.log.Log;
 
 import handlers.actionhandlers.L2ArtefactInstanceAction;
@@ -591,7 +584,11 @@ public class MasterHandler
 		Log.config("Loaded " + VoicedCommandHandler.getInstance().size() + " VoicedHandlers");
 	}
 
-	/**
+
+
+
+
+    /**
 	 * @param args
 	 */
 	public static void main(String[] args)
@@ -606,6 +603,8 @@ public class MasterHandler
 		loadSkillHandlers();
 		loadUserHandlers();
 		loadVoicedHandlers();
-		Log.config("Handlers Loaded...");
+
+
+        Log.config("Handlers Loaded...");
 	}
 }

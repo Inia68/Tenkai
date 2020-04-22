@@ -35,6 +35,7 @@ import l2server.gameserver.model.actor.L2Trap;
 import l2server.gameserver.model.actor.instance.L2MonsterInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2TrapInstance;
+import l2server.gameserver.model.event.AbstractScript;
 import l2server.gameserver.model.olympiad.CompetitionType;
 import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.network.serverpackets.ActionFailed;
@@ -66,7 +67,7 @@ import java.util.logging.Level;
 /**
  * @author Luis Arias
  */
-public class Quest extends ManagedScript
+public class Quest extends AbstractScript
 {
 
 	/**
@@ -1627,7 +1628,8 @@ public class Quest extends ManagedScript
 	 */
 	public L2NpcTemplate addKillId(int killId)
 	{
-		return addEventId(killId, Quest.QuestEventType.ON_KILL);
+        setAttackableKillId(kill -> notifyKill(kill.getTarget(), kill.getAttacker(), kill.isSummon()), killId);
+        return addEventId(killId, Quest.QuestEventType.ON_KILL);
 	}
 
 	/**

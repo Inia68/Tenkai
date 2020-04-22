@@ -52,6 +52,7 @@ import l2server.gameserver.model.actor.stat.NpcStat;
 import l2server.gameserver.model.actor.status.NpcStatus;
 import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Fort;
+import l2server.gameserver.model.event.timers.TimerHolder;
 import l2server.gameserver.model.olympiad.Olympiad;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.model.zone.type.L2TownZone;
@@ -79,12 +80,14 @@ import l2server.gameserver.templates.item.L2Weapon;
 import l2server.gameserver.templates.skills.L2SkillTargetType;
 import l2server.gameserver.util.Broadcast;
 import l2server.log.Log;
+import l2server.util.EmptyQueue;
 import l2server.util.Rnd;
 import l2server.util.StringUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.logging.Level;
 
 /**
@@ -180,8 +183,9 @@ public class L2Npc extends L2Character
 	 * The Polymorph object that manage this L2NpcInstance's morph to a PcInstance
 	 */
 	private L2PcInstance _clonedPlayer;
+    private final List<TimerHolder<?>> _timerHolders = new ArrayList<>();
 
-	//AI Recall
+    //AI Recall
 	public int getSoulShot()
 	{
 		L2NpcAIData AI = getTemplate().getAIData();
@@ -2168,4 +2172,32 @@ public class L2Npc extends L2Character
 				.scheduleGeneral(() -> broadcastPacket(new CreatureSay(getObjectId(), Say2.ALL, getName(), message)),
 						delay);
 	}
+
+    public void addTimerHolder(TimerHolder<?> timer)
+    {
+        synchronized (_timerHolders)
+        {
+            _timerHolders.add(timer);
+        }
+    }
+
+    public void removeTimerHolder(TimerHolder<?> timer)
+    {
+        synchronized (_timerHolders)
+        {
+            _timerHolders.remove(timer);
+        }
+    }
+
+    public void stopTimerHolders()
+    {
+        synchronized (_timerHolders)
+        {
+            for (TimerHolder<?> timer : _timerHolders)
+            {
+                timer.cancelTask();
+            }
+            _timerHolders.clear();
+        }
+    }
 }

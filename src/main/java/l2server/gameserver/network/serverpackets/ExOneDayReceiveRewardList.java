@@ -17,25 +17,28 @@ import java.util.List;
 public class ExOneDayReceiveRewardList extends L2GameServerPacket
 {
     final L2PcInstance _player;
+    private final Collection<DailyMissionDataHolder> _rewards;
+
     public ExOneDayReceiveRewardList(L2PcInstance player)
     {
         _player = player;
+        _rewards = DailyMissionData.getInstance().getDailyMissionData(player);
     }
 
-	@Override
+    @Override
 	public void writeImpl()
 	{
         writeC(0x23);
         writeD(_player.getClassId());
         writeD(LocalDate.now().getDayOfWeek().ordinal()); // Day of week
-        writeD(2); // reward size
-        for (int i = 0; i < 2; i++)
+        writeD(_rewards.size());
+        for (DailyMissionDataHolder reward : _rewards)
         {
-            writeH(4037); // Reward id
-            writeC(0x01); // Status
-            writeC(0x01); // getRequiredCompletitions 1 : 0
-            writeD(40); // progress
-            writeD(100); // getRequiredCompletions()
+            writeH(reward.getId());
+            writeC(reward.getStatus(_player));
+            writeC(reward.getRequiredCompletions() > 0 ? 0x01 : 0x00);
+            writeD(reward.getProgress(_player));
+            writeD(reward.getRequiredCompletions());
         }
 	}
 }

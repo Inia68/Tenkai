@@ -16,6 +16,8 @@
 package l2server.gameserver.scripting;
 
 import l2server.Config;
+import l2server.gameserver.scripting.java.JavaExecutionContext;
+import l2server.gameserver.scripting.java.JavaScriptingEngine;
 import l2server.log.Log;
 
 import java.io.BufferedReader;
@@ -27,6 +29,7 @@ import java.io.InputStreamReader;
 import java.io.InvalidClassException;
 import java.io.LineNumberReader;
 import java.io.ObjectInputStream;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -54,7 +57,9 @@ public final class L2ScriptEngineManager
 	public static final File SCRIPT_FOLDER =
 			new File(Config.DATAPACK_ROOT.getAbsolutePath(), Config.DATA_FOLDER + "scripts");
 
-	public static L2ScriptEngineManager getInstance()
+    private static final JavaExecutionContext _javaExecutionContext = new JavaScriptingEngine().createExecutionContext();
+
+    public static L2ScriptEngineManager getInstance()
 	{
 		return SingletonHolder._instance;
 	}
@@ -121,6 +126,7 @@ public final class L2ScriptEngineManager
 					{
 						double engineVer = Double.parseDouble(factory.getEngineVersion());
 						double existentEngVer = Double.parseDouble(existentEngine.getFactory().getEngineVersion());
+
 
 						if (engineVer <= existentEngVer)
 						{
@@ -442,7 +448,6 @@ public final class L2ScriptEngineManager
 				errorLog.delete();
 			}
 		}
-
 		if (engine instanceof Compilable && ATTEMPT_COMPILATION)
 		{
 			ScriptContext context = new SimpleScriptContext();

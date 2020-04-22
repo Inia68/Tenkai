@@ -97,6 +97,75 @@ public final class Util
 		ThreadPoolManager.getInstance().scheduleGeneral(new IllegalPlayerAction(actor, message, punishment), 5000);
 	}
 
+    public static boolean isInteger(String text)
+    {
+        if ((text == null) || text.isEmpty())
+        {
+            return false;
+        }
+        try
+        {
+            Integer.parseInt(text);
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
+    public static <T extends Enum<T>> boolean isEnum(String name, Class<T> enumType)
+    {
+        if ((name == null) || name.isEmpty())
+        {
+            return false;
+        }
+        try
+        {
+            return Enum.valueOf(enumType, name) != null;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
+
+
+    public static boolean isFloat(String text)
+    {
+        if ((text == null) || text.isEmpty())
+        {
+            return false;
+        }
+        try
+        {
+            Float.parseFloat(text);
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
+    public static boolean isDouble(String text)
+    {
+        if ((text == null) || text.isEmpty())
+        {
+            return false;
+        }
+        try
+        {
+            Double.parseDouble(text);
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
 	public static String getRelativePath(File base, File file)
 	{
 		return file.toURI().getPath().substring(base.toURI().getPath().length());

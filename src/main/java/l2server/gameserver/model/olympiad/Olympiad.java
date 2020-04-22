@@ -26,6 +26,7 @@ import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.instancemanager.GlobalVariablesManager;
 import l2server.gameserver.instancemanager.ZoneManager;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.event.ListenersContainer;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.util.Broadcast;
@@ -48,7 +49,7 @@ import java.util.logging.Logger;
 
 import gnu.trove.TIntIntHashMap;
 
-public class Olympiad
+public class Olympiad extends ListenersContainer
 {
 	protected static final Logger _logResults = Logger.getLogger("olympiad");
 

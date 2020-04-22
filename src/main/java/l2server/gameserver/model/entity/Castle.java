@@ -37,6 +37,7 @@ import l2server.gameserver.model.L2World;
 import l2server.gameserver.model.actor.instance.L2ArtefactInstance;
 import l2server.gameserver.model.actor.instance.L2DoorInstance;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.event.ListenersContainer;
 import l2server.gameserver.model.itemcontainer.PcInventory;
 import l2server.gameserver.model.zone.type.L2CastleTeleportZone;
 import l2server.gameserver.model.zone.type.L2CastleZone;
@@ -63,7 +64,7 @@ import java.util.logging.Level;
 
 import gnu.trove.TIntIntHashMap;
 
-public class Castle
+public class Castle extends ListenersContainer
 {
 
 	// =========================================================

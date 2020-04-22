@@ -15,6 +15,7 @@
 
 package l2server.gameserver.templates.chars;
 
+import l2server.gameserver.model.event.ListenersContainer;
 import l2server.gameserver.templates.StatsSet;
 
 /**
@@ -22,7 +23,7 @@ import l2server.gameserver.templates.StatsSet;
  *
  * @version $Revision: 1.2.4.6 $ $Date: 2005/04/02 15:57:51 $
  */
-public class L2CharTemplate
+public class L2CharTemplate extends ListenersContainer
 {
 	// BaseStats
 	public int baseSTR;

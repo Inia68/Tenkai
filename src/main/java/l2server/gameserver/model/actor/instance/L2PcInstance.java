@@ -101,6 +101,7 @@ import l2server.gameserver.model.entity.Duel;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.entity.Siege;
+import l2server.gameserver.model.event.timers.TimerHolder;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
 import l2server.gameserver.model.itemcontainer.PcAuction;
@@ -398,6 +399,8 @@ public class L2PcInstance extends L2Playable {
     private static final int[] COMMON_CRAFT_LEVELS = {5, 20, 28, 36, 43, 49, 55, 62, 70};
 
     private L2GameClient _client;
+
+    private final List<TimerHolder<?>> _timerHolders = new ArrayList<>();
 
     private String _accountName;
     private long _deleteTimer;
@@ -1127,6 +1130,24 @@ public class L2PcInstance extends L2Playable {
         }
     }
 
+
+    /**
+     * @return the prime shop points of the player.
+     */
+    public int getPrimePoints()
+    {
+        return Integer.parseInt(getVariable("PRIME_POINTS", "0"));
+    }
+
+    /**
+     * Sets prime shop for current player.
+     * @param points
+     */
+    public void setPrimePoints(int points)
+    {
+        setVariable("PRIME_POINTS", String.valueOf(Math.max(points, 0)));
+    }
+
     /**
      * ShortBuff clearing Task
      */
@@ -1545,6 +1566,23 @@ public class L2PcInstance extends L2Playable {
         }
 
         return getStat().getLevel();
+    }
+
+
+    public void addTimerHolder(TimerHolder<?> timer)
+    {
+        synchronized (_timerHolders)
+        {
+            _timerHolders.add(timer);
+        }
+    }
+
+    public void removeTimerHolder(TimerHolder<?> timer)
+    {
+        synchronized (_timerHolders)
+        {
+            _timerHolders.remove(timer);
+        }
     }
 
     /**

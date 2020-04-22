@@ -76,6 +76,7 @@ import l2server.gameserver.model.entity.Castle;
 import l2server.gameserver.model.entity.Fort;
 import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.entity.Siege;
+import l2server.gameserver.model.event.ListenersContainer;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.SystemMessageId;

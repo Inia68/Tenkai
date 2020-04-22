@@ -11,39 +11,34 @@ import l2server.gameserver.handler.AbstractDailyMissionHandler;
 import l2server.gameserver.handler.DailyMissionHandler;
 import l2server.gameserver.handler.ItemHandler;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.holder.ItemHolder;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
 import l2server.gameserver.templates.StatsSet;
 
-public class DailyMissionDataHolder {
+public class DailyMissionDataHolder
+{
     private final int _id;
     private final int _rewardId;
-    private final List<ItemContainer> _rewardsItems;
-    private final List<Integer> _classRestriction;
+    private final List<ItemHolder> _rewardsItems;
+    private final List<ClassId> _classRestriction;
     private final int _requiredCompletions;
-    private final StatsSet _params;
+    private final StatSet _params;
     private final boolean _dailyReset;
     private final boolean _isOneTime;
     private final AbstractDailyMissionHandler _handler;
 
-    public DailyMissionDataHolder()
+    public DailyMissionDataHolder(StatSet set)
     {
-        List<Integer> re = null;
-        re.add(1);
-        ItemContainer test = null;
-        test.addItem("test", 57, 200, null, null);
-        List<ItemContainer> re2 = null;
-        re2.add(test);
-
-        // final Function<DailyMissionDataHolder, AbstractDailyMissionHandler> handler = DailyMissionHandler.getInstance().getHandler(set.getString("handler"));
-        _id = 4; // set.getInteger("id");
-        _rewardId = 57; // set.getInteger("reward_id", 0);
-        _requiredCompletions = 10; // set.getInteger("requiredCompletion", 0);
-        _rewardsItems = re2; //set.getIntegerArray("items", ItemContainer.class);
-        _classRestriction =  re; ////set.getList("classRestriction", ClassId.class);
-        _params = null; // set.getObject("params", StatSet.class);
-        _dailyReset = true; // set.getBool("dailyReset", true);
-        _isOneTime = false; // set.getBool("isOneTime", true);
-        _handler = null; // handler != null ? handler.apply(this) : null;
+        final Function<DailyMissionDataHolder, AbstractDailyMissionHandler> handler = DailyMissionHandler.getInstance().getHandler(set.getString("handler"));
+        _id = set.getInt("id");
+        _rewardId = set.getInt("reward_id", 0);
+        _requiredCompletions = set.getInt("requiredCompletion", 0);
+        _rewardsItems = set.getList("items", ItemHolder.class);
+        _classRestriction = new LinkedList<>(); // set.getList("classRestriction", ClassId.class);
+        _params = set.getObject("params", StatSet.class);
+        _dailyReset = set.getBoolean("dailyReset", true);
+        _isOneTime = set.getBoolean("isOneTime", true);
+        _handler = handler != null ? handler.apply(this) : null;
     }
 
     public int getId()
@@ -56,12 +51,12 @@ public class DailyMissionDataHolder {
         return _rewardId;
     }
 
-    public List<Integer> getClassRestriction()
+    public List<ClassId> getClassRestriction()
     {
         return _classRestriction;
     }
 
-    public List<ItemContainer> getRewards()
+    public List<ItemHolder> getRewards()
     {
         return _rewardsItems;
     }
@@ -71,7 +66,7 @@ public class DailyMissionDataHolder {
         return _requiredCompletions;
     }
 
-    public StatsSet getParams()
+    public StatSet getParams()
     {
         return _params;
     }
@@ -88,7 +83,7 @@ public class DailyMissionDataHolder {
 
     public boolean isDisplayable(L2PcInstance player)
     {
-        return (!_isOneTime || (getStatus(player) != DailyMissionStatus.COMPLETED.getClientId())) && (_classRestriction.isEmpty() || _classRestriction.contains(player.getClassId()));
+        return true; // (!_isOneTime || (getStatus(player) != DailyMissionStatus.COMPLETED.getClientId())) && (_classRestriction.isEmpty() || _classRestriction.contains(player.getClassId()));
     }
 
     public void requestReward(L2PcInstance player)
@@ -101,12 +96,12 @@ public class DailyMissionDataHolder {
 
     public int getStatus(L2PcInstance player)
     {
-        return DailyMissionStatus.AVAILABLE.getClientId(); // _handler != null ? _handler.getStatus(player) : DailyMissionStatus.NOT_AVAILABLE.getClientId();
+        return _handler != null ? _handler.getStatus(player) : DailyMissionStatus.NOT_AVAILABLE.getClientId();
     }
 
     public int getProgress(L2PcInstance player)
     {
-        return 40; // _handler != null ? _handler.getProgress(player) : DailyMissionStatus.NOT_AVAILABLE.getClientId();
+        return _handler != null ? _handler.getProgress(player) : DailyMissionStatus.NOT_AVAILABLE.getClientId();
     }
 
     public void reset()

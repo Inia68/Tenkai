@@ -19,16 +19,19 @@ import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
 import l2server.gameserver.model.DailyMissionDataHolder;
+import l2server.gameserver.model.StatSet;
+import l2server.gameserver.model.base.ClassId;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.holder.ItemHolder;
 import l2server.log.Log;
+import l2server.util.IXmlReader;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
+import org.w3c.dom.Document;
 
 import java.io.File;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /**
@@ -36,121 +39,107 @@ import java.util.stream.Collectors;
  * @author Pere
  */
 
-public class DailyMissionData implements Reloadable
+public class DailyMissionData implements IXmlReader
 {
-	public class MissionTemplate
-	{
-		private int _id;
-		private Map<Integer, DailyMissionInfo> _missions = new HashMap<>();
-		public MissionTemplate(int id)
-		{
-			_id = id;
-		}
+    private static final Logger LOGGER = Logger.getLogger(DailyMissionData.class.getName());
+    private final Map<Integer, List<DailyMissionDataHolder>> _dailyMissionRewards = new LinkedHashMap<>();
+    private boolean _isAvailable;
 
-		public int getId()
-		{
-			return _id;
-		}
-
-		public Map<Integer, DailyMissionInfo> getHairStyles()
-		{
-			return _missions;
-		}
-	}
-
-	public class DailyMissionInfo
-	{
-		private int _id;
-		private int _rewardId;
-		private String _name;
-
-		private DailyMissionInfo(int id, int rewardId, String name)
-		{
-			_id = id;
-			_rewardId = rewardId;
-			_name = name;
-		}
-
-		public int getId()
-		{
-			return _id;
-		}
-
-        public int getRewardId()
-        {
-            return _rewardId;
-        }
-
-        public String getName()
-        {
-            return _name;
-        }
-	}
-
-	private Map<Integer, MissionTemplate> _missionsTable = new HashMap<>();
-    private Collection<MissionTemplate> _miss;
-
-	private DailyMissionData()
-	{
-		if (!Config.IS_CLASSIC)
-		{
-			reload();
-			ReloadableManager.getInstance().register("DailyMission", this);
-		}
-	}
-
-	@Override
-	public boolean reload()
-	{
-		File file = new File(Config.DATAPACK_ROOT, Config.DATA_FOLDER + "DailyMission.xml");
-
-		XmlDocument doc = new XmlDocument(file);
-        _missionsTable.clear();
-        MissionTemplate template = new MissionTemplate(0);
-        for (XmlNode d : doc.getChildren())
-        {
-            if (d.getName().equalsIgnoreCase("reward"))
-            {
-                int id = d.getInt("id");
-                int rewardId = d.getInt("reward_id");
-                String name = d.getString("name");
-
-                DailyMissionInfo info = new DailyMissionInfo(id, rewardId, name);
-            }
-        }
-
-        _missionsTable.put(0, template);
-        _miss.add(template);
-        Log.info("BeautyTable: Loaded " + template.getHairStyles().size() + " missions");
-
-		return false;
-	}
-
-	@Override
-	public String getReloadMessage(boolean success)
-	{
-		return "DailyMission Table reloaded";
-	}
-
-	public MissionTemplate getTemplate(int id)
-	{
-		return _missionsTable.get(id);
-	}
-
-    public Collection<MissionTemplate> getMissions()
+    protected DailyMissionData()
     {
-        return _miss;
+        load();
     }
 
-	public static DailyMissionData getInstance()
-	{
-		return SingletonHolder._instance;
-	}
+    @Override
+    public void load()
+    {
+        _dailyMissionRewards.clear();
+        parseDatapackFile("data/DailyMission.xml");
+        _isAvailable = !_dailyMissionRewards.isEmpty();
+        LOGGER.info(getClass().getSimpleName() + ": Loaded " + _dailyMissionRewards.size() + " one day rewards.");
+    }
 
+    @Override
+    public void parseDocument(Document doc, File f)
+    {
+        forEach(doc, "list", listNode -> forEach(listNode, "reward", rewardNode ->
+        {
+            final StatSet set = new StatSet(parseAttributes(rewardNode));
+            final List<ItemHolder> items = new ArrayList<>(1);
+            forEach(rewardNode, "items", itemsNode -> forEach(itemsNode, "item", itemNode ->
+            {
+                final int itemId = parseInteger(itemNode.getAttributes(), "id");
+                final int itemCount = parseInteger(itemNode.getAttributes(), "count");
+                items.add(new ItemHolder(itemId, itemCount));
+            }));
 
-	@SuppressWarnings("synthetic-access")
-	private static class SingletonHolder
-	{
-		protected static final DailyMissionData _instance = new DailyMissionData();
-	}
+            set.set("items", items);
+
+            final List<ClassId> classRestriction = new ArrayList<>(1);
+            forEach(rewardNode, "classId", classRestrictionNode -> classRestriction.add(ClassId.getClassId(Integer.parseInt(classRestrictionNode.getTextContent()))));
+            set.set("classRestriction", classRestriction);
+
+            // Initial values in case handler doesn't exists
+            set.set("handler", "");
+            set.set("params", StatSet.EMPTY_STATSET);
+
+            // Parse handler and parameters
+            forEach(rewardNode, "handler", handlerNode ->
+            {
+                set.set("handler", parseString(handlerNode.getAttributes(), "name"));
+
+                final StatSet params = new StatSet();
+                set.set("params", params);
+                forEach(handlerNode, "param", paramNode -> params.set(parseString(paramNode.getAttributes(), "name"), paramNode.getTextContent()));
+            });
+
+            final DailyMissionDataHolder holder = new DailyMissionDataHolder(set);
+            _dailyMissionRewards.computeIfAbsent(holder.getId(), k -> new ArrayList<>()).add(holder);
+        }));
+    }
+
+    public Collection<DailyMissionDataHolder> getDailyMissionData()
+    {
+        //@formatter:off
+        return _dailyMissionRewards.values()
+                .stream()
+                .flatMap(List::stream)
+                .collect(Collectors.toList());
+        //@formatter:on
+    }
+
+    public Collection<DailyMissionDataHolder> getDailyMissionData(L2PcInstance player)
+    {
+        //@formatter:off
+        return _dailyMissionRewards.values()
+                .stream()
+                .flatMap(List::stream)
+                .filter(o -> o.isDisplayable(player))
+                .collect(Collectors.toList());
+        //@formatter:on
+    }
+
+    public Collection<DailyMissionDataHolder> getDailyMissionData(int id)
+    {
+        return _dailyMissionRewards.get(id);
+    }
+
+    public boolean isAvailable()
+    {
+        return _isAvailable;
+    }
+
+    /**
+     * Gets the single instance of DailyMissionData.
+     * @return single instance of DailyMissionData
+     */
+    public static DailyMissionData getInstance()
+    {
+        return SingletonHolder.INSTANCE;
+    }
+
+    private static class SingletonHolder
+    {
+        protected static final DailyMissionData INSTANCE = new DailyMissionData();
+    }
 }

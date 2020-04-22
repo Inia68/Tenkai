@@ -18,6 +18,9 @@ package l2server.gameserver.model.actor.instance;
 import l2server.gameserver.model.actor.L2Attackable;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.knownlist.FriendlyMobKnownList;
+import l2server.gameserver.model.event.Containers;
+import l2server.gameserver.model.event.EventDispatcher;
+import l2server.gameserver.model.event.impl.creature.npc.OnAttackableKill;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 /**
@@ -62,4 +65,20 @@ public class L2FriendlyMobInstance extends L2Attackable
 	{
 		return true;
 	}
+
+    @Override
+    public boolean doDie(L2Character killer) {
+        // Kill the NpcInstance (the corpse disappeared after 7 seconds)
+        if (!super.doDie(killer))
+        {
+            return false;
+        }
+
+        if ((killer != null) && killer.isAttackable())
+        {
+            // Delayed notification
+            EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(null, this, false), Containers.Npcs());
+        }
+        return true;
+    }
 }

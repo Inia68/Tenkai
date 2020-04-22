@@ -22,6 +22,13 @@ import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.L2Playable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PetInstance;
+import l2server.gameserver.model.event.Containers;
+import l2server.gameserver.model.event.EventDispatcher;
+import l2server.gameserver.model.event.EventType;
+import l2server.gameserver.model.event.ListenerRegisterType;
+import l2server.gameserver.model.event.annotations.RegisterEvent;
+import l2server.gameserver.model.event.annotations.RegisterType;
+import l2server.gameserver.model.event.impl.creature.player.OnPlayerLevelChanged;
 import l2server.gameserver.model.zone.type.L2SwampZone;
 import l2server.log.Log;
 
@@ -144,6 +151,8 @@ public class PlayableStat extends CharStat
 		return expRemoved || spRemoved;
 	}
 
+
+
 	public boolean addLevel(byte value)
 	{
 		if (getLevel() + value > getMaxLevel())
@@ -159,10 +168,13 @@ public class PlayableStat extends CharStat
 		}
 
 		boolean levelIncreased = getLevel() + value > getLevel();
-		value += getLevel();
-		setLevel(value);
+        value += getLevel();
 
-		// Sync up exp with current level
+
+        EventDispatcher.getInstance().notifyEventAsync(new OnPlayerLevelChanged(getActiveChar().getActingPlayer(), getLevel(), getLevel() + value), Containers.Players());
+        setLevel(value);
+
+        // Sync up exp with current level
 		if (getExp() >= getExpForLevel(getLevel() + 1) || getExpForLevel(getLevel()) > getExp())
 		{
 			setExp(getExpForLevel(getLevel()));

@@ -5,6 +5,7 @@ import l2server.gameserver.model.DailyMissionDataHolder;
 import l2server.gameserver.model.DailyMissionPlayerEntry;
 import l2server.gameserver.model.DailyMissionStatus;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.event.ListenersContainer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,9 +13,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public abstract class AbstractDailyMissionHandler {
+public abstract class AbstractDailyMissionHandler extends ListenersContainer
+{
+    protected Logger LOGGER = Logger.getLogger(getClass().getName());
 
     private final Map<Integer, DailyMissionPlayerEntry> _entries = new ConcurrentHashMap<>();
     private final DailyMissionDataHolder _holder;
@@ -62,6 +66,7 @@ public abstract class AbstractDailyMissionHandler {
         }
         catch (SQLException e)
         {
+            LOGGER.log(Level.WARNING, "Error while clearing data for: " + getClass().getSimpleName(), e);
         }
         finally
         {
@@ -87,7 +92,7 @@ public abstract class AbstractDailyMissionHandler {
 
     protected void giveRewards(L2PcInstance player)
     {
-        _holder.getRewards().forEach(i -> player.addItem("One Day Reward", i.getItems()[0], player, true));
+        _holder.getRewards().forEach(i -> player.addItem("One Day Reward", i.getId(), i.getCount(), player, true));
     }
 
     protected void storePlayerEntry(DailyMissionPlayerEntry entry)
@@ -107,6 +112,7 @@ public abstract class AbstractDailyMissionHandler {
         }
         catch (Exception e)
         {
+            LOGGER.log(Level.WARNING, "Error while saving reward " + entry.getRewardId() + " for player: " + entry.getObjectId() + " in database: ", e);
         }
     }
 
@@ -134,6 +140,7 @@ public abstract class AbstractDailyMissionHandler {
         }
         catch (Exception e)
         {
+            LOGGER.log(Level.WARNING, "Error while loading reward " + _holder.getId() + " for player: " + objectId + " in database: ", e);
         }
 
         if (createIfNone)

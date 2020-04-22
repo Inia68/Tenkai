@@ -15,6 +15,7 @@
 
 package l2server.gameserver;
 
+import l2server.gameserver.handler.dailymissionhandlers.LevelDailyMissionHandler;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.ServerMode;
@@ -30,12 +31,8 @@ import l2server.gameserver.events.RankingKillInfo;
 import l2server.gameserver.events.instanced.EventsManager;
 import l2server.gameserver.geoeditorcon.GeoEditorListener;
 import l2server.gameserver.gui.ServerGui;
-import l2server.gameserver.handler.AdminCommandHandler;
-import l2server.gameserver.handler.ChatHandler;
-import l2server.gameserver.handler.ItemHandler;
-import l2server.gameserver.handler.SkillHandler;
-import l2server.gameserver.handler.UserCommandHandler;
-import l2server.gameserver.handler.VoicedCommandHandler;
+import l2server.gameserver.handler.*;
+import l2server.gameserver.handler.dailymissionhandlers.MonsterDailyMissionHandler;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.AirShipManager;
 import l2server.gameserver.instancemanager.AntiFeedManager;
@@ -202,7 +199,10 @@ public class Server
 		printSection("Engines");
 		L2ScriptEngineManager.getInstance();
 
-		printSection("World");
+        DailyMissionHandler.getInstance().registerHandler("level", LevelDailyMissionHandler::new);
+        DailyMissionHandler.getInstance().registerHandler("monster", MonsterDailyMissionHandler::new);
+
+        printSection("World");
 		// start game time control early
 		TimeController.getInstance();
 		InstanceManager.getInstance();

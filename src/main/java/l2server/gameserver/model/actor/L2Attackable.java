@@ -54,6 +54,9 @@ import l2server.gameserver.model.actor.instance.L2PetInstance;
 import l2server.gameserver.model.actor.instance.L2SummonInstance;
 import l2server.gameserver.model.actor.knownlist.AttackableKnownList;
 import l2server.gameserver.model.actor.status.AttackableStatus;
+import l2server.gameserver.model.event.Containers;
+import l2server.gameserver.model.event.EventDispatcher;
+import l2server.gameserver.model.event.impl.creature.npc.OnAttackableKill;
 import l2server.gameserver.model.quest.Quest;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
@@ -599,7 +602,9 @@ public class L2Attackable extends L2Npc
 			{
 				player.setHatersAmount(player.getHatersAmount() - 1);
 			}
-		}
+            EventDispatcher.getInstance().notifyEventAsync(new OnAttackableKill(killer.getActingPlayer(), this, killer instanceof L2Playable), Containers.Players());
+
+        }
 
 		// Notify the Quest Engine of the L2Attackable death if necessary
 		try

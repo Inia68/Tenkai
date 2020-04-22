@@ -15,6 +15,8 @@
 
 package l2server.gameserver.scripting;
 
+import l2server.gameserver.model.event.AbstractScript;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
