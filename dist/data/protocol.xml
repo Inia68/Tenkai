@@ -6162,6 +6162,8 @@
             <packet id="0x18f" name="ExPledgeBonusMarkReset" />
             <packet id="0x190" name="ExPledgeBonusUpdate" />
             <packet id="0x191" name="ExSSOAuthnToken" />
+			<packet id="0x1A7" name="ExOneDayReceiveRewardList" />
+			<packet id="0x1A8" name="ExConnectedTimeAndGetTableReward" />
         </packetfamilly>
     </packetfamilly>
     <packetfamilly switchtype="c" way="ClientPackets">
@@ -7827,7 +7829,9 @@
             <packet id="0x115" name="RequestSSOAuthnToken" />
             <packet id="0x118" name="Unk118" />
             <packet id="0x11c" name="Unk11c" />
-            <packet id="0x11e" name="Unk11e" />
+			<packet id="0x11d" name="RequestTodoList" />
+            <packet id="0x11e" name="RequestTodoListHtml" />
+			<packet id="0x11f" name="RequestOneDayRewardReceive" />
             <packet id="0x120" name="Unk120" />
 			<packet id="0x121" name="Unk121" />
 			<packet id="0x122" name="RequestPledgeBonusRewardList" />

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true">
+
+    <item>
+        <!-- Ingredients -->
+		<ingredient id="4355" count="500" /> <!-- Blue Eva -->
+        <ingredient count="1" id="28486" />    <!-- Radiant Brooch Lv1 -->
+        <!-- Products -->
+        <production count="1" id="28487" />    <!-- Radiant Brooch Lv2 -->
+    </item>
+
+	<item>
+		<!-- Ingredients -->
+		<ingredient id="4355" count="500" /> <!-- Blue Eva -->
+		<ingredient count="1" id="28487" />    <!-- Radiant Brooch Lv2 -->
+		<!-- Products -->
+		<production count="1" id="28488" />    <!-- Radiant Brooch Lv3 -->
+	</item>
+
+
+    </list>

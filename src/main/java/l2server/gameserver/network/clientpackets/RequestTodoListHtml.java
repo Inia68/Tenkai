@@ -7,15 +7,20 @@ import l2server.log.Log;
  */
 public class RequestTodoListHtml extends L2GameClientPacket
 {
+    @SuppressWarnings("unused")
+    private int _tab;
+    @SuppressWarnings("unused")
+    private String _linkName;
+
 	@Override
 	public void readImpl()
 	{
+        _tab = readC();
+        _linkName = readS();
 	}
 
 	@Override
 	public void runImpl()
 	{
-		// TODO
-		Log.info(getType() + " packet was received from " + getClient() + ".");
 	}
 }

@@ -58,7 +58,8 @@
         <!-- Epic Items -->
         <itemDrop itemId="6656" min="5" max="7" chance="100" />    <!-- Antharas' Earring -->
         <itemDrop itemId="19465" min="10" max="15" chance="100" />    <!-- Bottle of Antharas' Soul -->
-        <itemDrop itemId="36414" min="1" max="2" chance="10" />    <!-- Dragon Claw -->
+        <itemDrop itemId="36414" min="100" max="200" chance="100" />    <!-- Dragon Claw -->
+		<itemDrop itemId="4355" min="8000" max="10000" chance="100" />    <!-- Blue Eva -->
 		<itemDrop itemId="37571" min="5" max="10" chance="100" />    <!-- Antharas Card -->
 		<!-- Epic Weapons -->
         <dropCategory chance="10">
@@ -87,7 +88,8 @@
         <!-- Epic Items -->
         <itemDrop itemId="6657" min="5" max="7" chance="100" /> <!-- Valakas' Necklace -->
         <itemDrop itemId="19466" min="10" max="15" chance="100" /> <!-- Bottle of Valakas' Soul -->
-		<itemDrop itemId="36414" min="1" max="2" chance="10" />    <!-- Dragon Claw -->
+		<itemDrop itemId="36414" min="100" max="200" chance="100" />    <!-- Dragon Claw -->
+		<itemDrop itemId="4355" min="8000" max="10000" chance="100" />    <!-- Blue Eva -->
 		<itemDrop itemId="37572" min="5" max="10" chance="100" />    <!-- Valakas Card -->
         <!-- Epic Weapons -->
         <dropCategory chance="10">
@@ -105,14 +107,13 @@
         <!-- Other Shits -->
         <itemDrop itemId="19447" min="2" max="3" chance="100" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
         <itemDrop itemId="19448" min="3" max="5" chance="100" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
-        <!-- Custom Drop -->
-        <itemDrop itemId="4357" min="50000000" max="80000000" chance="100" /> <!-- Silver Shilen -->
     </npc>
     <!-- Lindvior (Open World) -->
     <npc id="29240" overrideDrops="true" hpMax="1641657216">
         <!-- Epic Items -->
-        <itemDrop itemId="36946" min="1" max="2" chance="100" /> <!-- Lindvior's Earring -->
-        <itemDrop itemId="36414" min="1" max="2" chance="10" /> <!-- Dragon Claw -->
+        <itemDrop itemId="36946" min="6" max="10" chance="100" /> <!-- Lindvior's Earring -->
+		<itemDrop itemId="36414" min="100" max="200" chance="100" />    <!-- Dragon Claw -->
+		<itemDrop itemId="4355" min="8000" max="10000" chance="100" />    <!-- Blue Eva -->
 		<itemDrop itemId="37573" min="5" max="10" chance="100" />    <!-- Lindvior Card -->
 		<!-- Epic Boss Weapons -->
         <dropCategory chance="10">
@@ -130,8 +131,6 @@
         <!-- Random Shit -->
         <itemDrop itemId="19447" min="2" max="3" chance="100" /> <!-- Blessed Scroll: Enchant Weapon (R-grade) -->
         <itemDrop itemId="19448" min="3" max="5" chance="100" /> <!-- Blessed Scroll: Enchant Armor (R-grade) -->
-        <!-- Custom Drop -->
-        <itemDrop itemId="4357" min="50000000" max="80000000" chance="100" /> <!-- Silver Shilen -->
     </npc>
     <!-- Kelbim -->
     <npc id="26124" overrideDrops="true">

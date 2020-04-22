@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list maintainEnchantment="true">
+
+    <item>
+        <!-- Ingredients -->
+		<ingredient id="4355" count="500" /> <!-- Blue Eva -->
+        <ingredient count="1" id="26338" />    <!-- Abundance Lv1 -->
+        <!-- Products -->
+        <production count="1" id="26339" />    <!-- Abundance Lv2 -->
+    </item>
+
+	<item>
+		<!-- Ingredients -->
+		<ingredient id="4355" count="500" /> <!-- Blue Eva -->
+		<ingredient count="1" id="26339" />    <!-- Abundance Lv2 -->
+		<!-- Products -->
+		<production count="1" id="26340" />    <!-- Abundance Lv3 -->
+	</item>
+
+	<item>
+		<!-- Ingredients -->
+		<ingredient id="4355" count="500" /> <!-- Blue Eva -->
+		<ingredient count="1" id="26340" />    <!-- Abundance Lv3 -->
+		<!-- Products -->
+		<production count="1" id="26341" />    <!-- Abundance Lv4 -->
+	</item>
+
+
+
+    </list>

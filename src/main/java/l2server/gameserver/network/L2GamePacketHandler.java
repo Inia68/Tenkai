@@ -125,6 +125,22 @@ public final class L2GamePacketHandler
 		Log.warning(Util.printData(array, size));
 	}
 
+
+    private void debugPacket(int[] opcodes, int opcodeCount, ByteBuffer buf, GameClientState state, L2GameClient client)
+    {
+        String opcode = "0x" + Integer.toHexString(opcodes[0]);
+        for (int i = 1; i < opcodeCount; i++)
+        {
+            opcode += ":0x" + Integer.toHexString(opcodes[i]);
+        }
+
+        int size = buf.remaining();
+        Log.info("Packet: " + opcode + " on State: " + state.name() + " Client: " + client.toString());
+        byte[] array = new byte[size];
+        buf.get(array);
+        Log.info(Util.printData(array, size));
+    }
+
 	// impl
 	@Override
 	public L2GameClient create(MMOConnection<L2GameClient> con)

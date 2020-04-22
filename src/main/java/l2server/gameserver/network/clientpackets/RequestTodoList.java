@@ -16,27 +16,50 @@
 package l2server.gameserver.network.clientpackets;
 
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.network.serverpackets.ExOneDayReceiveRewardList;
 
 /**
  * @author Pere
  */
 public final class RequestTodoList extends L2GameClientPacket
 {
-	@SuppressWarnings("unused")
-	private int _unk;
+    private int _tab;
+    @SuppressWarnings("unused")
+    private int _showAllLevels;
 
 	@Override
 	protected void readImpl()
 	{
-		_unk = readH();
+        _tab = readC(); // Daily Reward = 9, Event = 1, Instance Zone = 2
+        _showAllLevels = readC(); // Disabled = 0, Enabled = 1
 	}
 
 	@Override
 	protected void runImpl()
 	{
 		final L2PcInstance activeChar = getClient().getActiveChar();
-		if (activeChar == null)
-		{
-		}
+        if (activeChar == null)
+        {
+            return;
+        }
+
+        switch (_tab)
+        {
+            // case 1:
+            // {
+            // player.sendPacket(new ExTodoListInzone());
+            // break;
+            // }
+            // case 2:
+            // {
+            // player.sendPacket(new ExTodoListInzone());
+            // break;
+            // }
+            case 9:
+            {
+                activeChar.sendPacket(new ExOneDayReceiveRewardList(activeChar));
+                break;
+            }
+        }
 	}
 }

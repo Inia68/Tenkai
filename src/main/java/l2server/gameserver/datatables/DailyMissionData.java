@@ -18,6 +18,8 @@ package l2server.gameserver.datatables;
 import l2server.Config;
 import l2server.gameserver.Reloadable;
 import l2server.gameserver.ReloadableManager;
+import l2server.gameserver.model.DailyMissionDataHolder;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.log.Log;
 import l2server.util.xml.XmlDocument;
 import l2server.util.xml.XmlNode;
@@ -25,7 +27,9 @@ import l2server.util.xml.XmlNode;
 import java.io.File;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author LasTravel
@@ -142,6 +146,7 @@ public class DailyMissionData implements Reloadable
 	{
 		return SingletonHolder._instance;
 	}
+
 
 	@SuppressWarnings("synthetic-access")
 	private static class SingletonHolder
