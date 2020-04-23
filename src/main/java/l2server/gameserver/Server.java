@@ -33,6 +33,7 @@ import l2server.gameserver.geoeditorcon.GeoEditorListener;
 import l2server.gameserver.gui.ServerGui;
 import l2server.gameserver.handler.*;
 import l2server.gameserver.handler.dailymissionhandlers.MonsterDailyMissionHandler;
+import l2server.gameserver.handler.dailymissionhandlers.PlayerDailyMissionHandler;
 import l2server.gameserver.idfactory.IdFactory;
 import l2server.gameserver.instancemanager.AirShipManager;
 import l2server.gameserver.instancemanager.AntiFeedManager;
@@ -201,6 +202,7 @@ public class Server
 
         DailyMissionHandler.getInstance().registerHandler("level", LevelDailyMissionHandler::new);
         DailyMissionHandler.getInstance().registerHandler("monster", MonsterDailyMissionHandler::new);
+        DailyMissionHandler.getInstance().registerHandler("player", PlayerDailyMissionHandler::new);
 
         printSection("World");
 		// start game time control early

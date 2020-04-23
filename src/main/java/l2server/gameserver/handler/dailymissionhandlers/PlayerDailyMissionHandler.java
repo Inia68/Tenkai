@@ -8,44 +8,29 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.event.Containers;
 import l2server.gameserver.model.event.EventType;
 import l2server.gameserver.model.event.impl.creature.npc.OnAttackableKill;
-import l2server.gameserver.model.event.impl.creature.player.OnPlayerLevelChanged;
+import l2server.gameserver.model.event.impl.creature.player.OnPlayerPvPKill;
 import l2server.gameserver.model.event.listeners.ConsumerEventListener;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MonsterDailyMissionHandler extends AbstractDailyMissionHandler
+public class PlayerDailyMissionHandler extends AbstractDailyMissionHandler
 {
     private final int _amount;
-    private final int _minLevel;
-    private final int _maxLevel;
-    private final List<Integer> _ids = new ArrayList<>();
+    private final int _levelDiff;
 
-    public MonsterDailyMissionHandler(DailyMissionDataHolder holder)
+    public PlayerDailyMissionHandler(DailyMissionDataHolder holder)
     {
         super(holder);
         _amount = holder.getRequiredCompletions();
-        _minLevel = holder.getParams().getInt("minLevel", 0);
-        _maxLevel = holder.getParams().getInt("maxLevel", Byte.MAX_VALUE);
-        final String ids = holder.getParams().getString("ids", "");
-        if (!ids.isEmpty())
-        {
-            for (String s : ids.split(","))
-            {
-                final int id = Integer.parseInt(s);
-                if (!_ids.contains(id))
-                {
-                    _ids.add(id);
-                }
-            }
-        }
+        _levelDiff = holder.getParams().getInt("levelDiff", 0);
     }
 
     @Override
     public void init()
     {
-        Containers.Monsters().addListener(new ConsumerEventListener(this, EventType.ON_ATTACKABLE_KILL, (OnAttackableKill event) -> onAttackableKill(event), this));
+        Containers.Players().addListener(new ConsumerEventListener(this, EventType.ON_PLAYER_PVP_KILL, (OnPlayerPvPKill event) -> OnPlayerPvPKill(event), this));
     }
 
     @Override
@@ -74,35 +59,15 @@ public class MonsterDailyMissionHandler extends AbstractDailyMissionHandler
         return false;
     }
 
-    private void onAttackableKill(OnAttackableKill event)
+    private void OnPlayerPvPKill(OnPlayerPvPKill event)
     {
-        final L2Character monster = event.getTarget();
-        if (!_ids.isEmpty() && !_ids.contains(((L2NpcTemplate) monster.getTemplate()).NpcId))
+        final L2PcInstance player = event.getPlayer();
+        final L2PcInstance killed = event.getTarget();
+        if (Math.abs(player.getLevel() - killed.getLevel()) > _levelDiff)
         {
             return;
         }
-
-        final L2PcInstance player = event.getAttacker();
-        if (_minLevel > 0)
-        {
-            final int monsterLevel = monster.getLevel();
-            if ((monsterLevel < _minLevel) || (monsterLevel > _maxLevel) || ((player.getLevel() - monsterLevel) > 5))
-            {
-                return;
-            }
-        }
-
-        final L2Party party = player.getParty();
-        if (party != null)
-        {
-            final L2CommandChannel channel = party.getCommandChannel();
-            final List<L2PcInstance> members = channel != null ? channel.getMembers() : party.getPartyMembers();
-            members.stream().filter(member -> member.getDistanceSq(monster) <= Config.ALT_PARTY_RANGE).forEach(this::processPlayerProgress);
-        }
-        else
-        {
-            processPlayerProgress(player);
-        }
+        processPlayerProgress(player);
     }
 
     private void processPlayerProgress(L2PcInstance player)
