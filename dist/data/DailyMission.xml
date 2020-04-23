@@ -896,6 +896,9 @@
 		</handler>
 		<items>
 			<item id="10650" count="5" />
+			<item id="57" count="2000000"/> <!-- Adena -->
+			<item id="4037" count= "200"/> <!-- Coin Of Luck -->
+			<item id="4355" count="100000"/> <!-- Blue Eva -->
 		</items>
 	</reward>
 	<reward id="233" reward_id="613" name="Monster Hunting: Profesionnal" requiredCompletion="10000" dailyReset="false">
@@ -906,6 +909,9 @@
 		</handler>
 		<items>
 			<item id="10650" count="5" />
+			<item id="57" count="2000000"/> <!-- Adena -->
+			<item id="4037" count= "200"/> <!-- Coin Of Luck -->
+			<item id="4355" count="100000"/> <!-- Blue Eva -->
 		</items>
 	</reward>
 	<reward id="234" reward_id="614" name="Monster Hunting: Casual" requiredCompletion="5000" dailyReset="false">
@@ -916,6 +922,9 @@
 		</handler>
 		<items>
 			<item id="10650" count="5" />
+			<item id="57" count="2000000"/> <!-- Adena -->
+			<item id="4037" count= "200"/> <!-- Coin Of Luck -->
+			<item id="4355" count="100000"/> <!-- Blue Eva -->
 		</items>
 	</reward>
 	<reward id="235" reward_id="615" name="Monster Hunting: Newbie" requiredCompletion="100" dailyReset="false">
@@ -926,6 +935,9 @@
 		</handler>
 		<items>
 			<item id="10650" count="5" />
+			<item id="57" count="2000000"/> <!-- Adena -->
+			<item id="4037" count= "200"/> <!-- Coin Of Luck -->
+			<item id="4355" count="100000"/> <!-- Blue Eva -->
 		</items>
 	</reward>
 
