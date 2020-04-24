@@ -48,12 +48,4 @@
         <ingredient id="37559" count="3" /> <!-- Shiny -->
         <production id="47440" count="1" />
     </item>
-    <item>
-        <ingredient id="37559" count="100" /> <!-- Shiny -->
-        <production id="47109" count="1" /> <!--Lillith Stage 10 -->
-    </item>
-    <item>
-        <ingredient id="37559" count="100" /> <!-- Shiny -->
-        <production id="47098" count="1" /> <!--Anakim Stage 10 -->
-    </item>
 </list>
