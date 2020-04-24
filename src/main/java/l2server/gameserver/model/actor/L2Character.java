@@ -2800,6 +2800,24 @@ public abstract class L2Character extends L2Object
 		// Stop HP/MP/CP Regeneration task
 		getStatus().stopHpMpRegeneration();
 
+		if (killer instanceof  L2SummonInstance) {
+		    // If its a summon go back to the owner after killing the target
+		    L2SummonInstance summon = (L2SummonInstance) killer;
+		    if (summon.getOwner() != null) {
+		        summon.followOwner();
+            }
+        }
+
+		if (killer instanceof L2PcInstance) {
+		    L2PcInstance player = (L2PcInstance) killer;
+		    for (L2SummonInstance s: player.getSummons()) {
+                if (s.getOwner() != null) {
+                    s.followOwner();
+                }
+            }
+        }
+
+
 		// Stop all active skills effects in progress on the L2Character,
 		// if the Character isn't affected by Soul of The Phoenix or Salvation
 		if (this instanceof L2Playable && ((L2Playable) this).isPhoenixBlessed())
