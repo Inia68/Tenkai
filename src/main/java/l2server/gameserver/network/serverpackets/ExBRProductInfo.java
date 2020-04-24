@@ -10,7 +10,7 @@ import l2server.gameserver.model.primeshop.PrimeShopItem;
 public class ExBRProductInfo extends L2GameServerPacket
 {
     private final PrimeShopGroup _item;
-    private final int _charPoints;
+    private final long _charPoints;
     private final long _charAdena;
     private final long _charCoins;
 

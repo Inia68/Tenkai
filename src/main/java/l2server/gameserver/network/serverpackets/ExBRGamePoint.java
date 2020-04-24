@@ -8,7 +8,7 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
 public class ExBRGamePoint extends L2GameServerPacket
 {
     private final int _charId;
-    private final int _charPoints;
+    private final long _charPoints;
 
 	public ExBRGamePoint(L2PcInstance player)
 	{

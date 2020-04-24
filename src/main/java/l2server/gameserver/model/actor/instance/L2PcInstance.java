@@ -1138,18 +1138,20 @@ public class L2PcInstance extends L2Playable {
     /**
      * @return the prime shop points of the player.
      */
-    public int getPrimePoints()
+    public long getPrimePoints()
     {
-        return Integer.parseInt(getVariable("PRIME_POINTS", "0"));
+        return _inventory.getItemByItemId(4037).getCount() * 10;
+        // return Integer.parseInt(getVariable("PRIME_POINTS", "0"));
     }
 
     /**
      * Sets prime shop for current player.
      * @param points
      */
-    public void setPrimePoints(int points)
+    public void setPrimePoints(long points)
     {
-        setVariable("PRIME_POINTS", String.valueOf(Math.max(points, 0)));
+        _inventory.destroyItemByItemId("primeshop", 4037, (_inventory.getItemByItemId(4037).getCount() - (points / 10)), this, null);
+        // setVariable("PRIME_POINTS", String.valueOf(Math.max(points, 0)));
     }
 
     /**

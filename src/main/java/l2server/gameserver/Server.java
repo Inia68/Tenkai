@@ -15,6 +15,8 @@
 
 package l2server.gameserver;
 
+import l2server.Base64;
+import l2server.gameserver.handler.dailymissionhandlers.EventDailyMissionHandler;
 import l2server.gameserver.handler.dailymissionhandlers.LevelDailyMissionHandler;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
@@ -99,10 +101,7 @@ import l2server.util.DeadLockDetector;
 import l2server.util.IPv4Filter;
 
 import java.awt.Toolkit;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Calendar;
@@ -141,6 +140,10 @@ public class Server
 	{
 		return _deadDetectThread;
 	}
+
+    public static void main(String[] args) throws Exception {
+        new Server();
+    }
 
 	public Server() throws Exception
 	{
@@ -203,6 +206,7 @@ public class Server
         DailyMissionHandler.getInstance().registerHandler("level", LevelDailyMissionHandler::new);
         DailyMissionHandler.getInstance().registerHandler("monster", MonsterDailyMissionHandler::new);
         DailyMissionHandler.getInstance().registerHandler("player", PlayerDailyMissionHandler::new);
+        DailyMissionHandler.getInstance().registerHandler("event", EventDailyMissionHandler::new);
 
         printSection("World");
 		// start game time control early

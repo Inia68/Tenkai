@@ -102,4 +102,14 @@
 		</items>
 	</reward>
 
+	<!-- Event -->
+	<reward id="239" reward_id="619" name="Participe 3 times in event" requiredCompletion="3"  dailyReset="true">
+		<handler name="event">
+		</handler>
+		<items>
+			<item id="57" count="1000000"/> <!-- Adena -->
+			<item id="4355" count="10"/> <!-- Blue Eva -->
+		</items>
+	</reward>
+
 </list>
