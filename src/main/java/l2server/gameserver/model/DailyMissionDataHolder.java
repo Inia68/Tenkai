@@ -36,7 +36,7 @@ public class DailyMissionDataHolder
         _rewardsItems = set.getList("items", ItemHolder.class);
         _classRestriction = new LinkedList<>(); // set.getList("classRestriction", ClassId.class);
         _params = set.getObject("params", StatSet.class);
-        _dailyReset = set.getBoolean("dailyReset", true);
+        _dailyReset = set.getBoolean("dailyReset", false);
         _isOneTime = set.getBoolean("isOneTime", true);
         _handler = handler != null ? handler.apply(this) : null;
     }
@@ -83,7 +83,7 @@ public class DailyMissionDataHolder
 
     public boolean isDisplayable(L2PcInstance player)
     {
-        return true; // (!_isOneTime || (getStatus(player) != DailyMissionStatus.COMPLETED.getClientId())) && (_classRestriction.isEmpty() || _classRestriction.contains(player.getClassId()));
+        return (_dailyReset || !_isOneTime || (getStatus(player) != DailyMissionStatus.COMPLETED.getClientId())); //&& (_classRestriction.isEmpty() || _classRestriction.contains(player.getClassId()));
     }
 
     public void requestReward(L2PcInstance player)

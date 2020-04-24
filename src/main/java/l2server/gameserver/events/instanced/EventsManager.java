@@ -380,11 +380,7 @@ public class EventsManager implements Reloadable
 			npcHtmlMessage.setHtml(
 					"<html><head><title>Instanced Events</title></head><body>You can't register while casting a skill.</body></html>");
 		}
-		else if (checkDualBox(playerInstance))
-		{
-			npcHtmlMessage.setHtml(
-					"<html><head><title>Instanced Events</title></head><body>You have another character already registered for this event!</body></html>");
-		}
+
 		else if (playerInstance.getInstanceId() != 0)
 		{
 			npcHtmlMessage.setHtml(

@@ -143,11 +143,15 @@ public abstract class AbstractDailyMissionHandler extends ListenersContainer
             LOGGER.log(Level.WARNING, "Error while loading reward " + _holder.getId() + " for player: " + objectId + " in database: ", e);
         }
 
-        if (createIfNone)
+
+        DailyMissionPlayerEntry d = _entries.get(objectId);
+        if (d == null && createIfNone)
         {
             final DailyMissionPlayerEntry entry = new DailyMissionPlayerEntry(objectId, _holder.getRewardId());
             _entries.put(objectId, entry);
             return entry;
+        } else if (d != null) {
+            return d;
         }
         return null;
     }

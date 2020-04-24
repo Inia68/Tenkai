@@ -9,6 +9,10 @@ import l2server.gameserver.instancemanager.InstanceManager;
 import l2server.gameserver.model.L2Party;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.event.Containers;
+import l2server.gameserver.model.event.EventDispatcher;
+import l2server.gameserver.model.event.impl.creature.player.OnPlayerPvPKill;
+import l2server.gameserver.model.event.impl.creature.player.event.OnEventParticipate;
 import l2server.gameserver.model.olympiad.OlympiadManager;
 import l2server.gameserver.network.clientpackets.Say2;
 import l2server.gameserver.network.serverpackets.ActionFailed;
@@ -169,8 +173,9 @@ public abstract class EventInstance
 				if (playerInstance != null)
 				{
 					playerInstance.setEventPoints(0);
+                    EventDispatcher.getInstance().notifyEventAsync(new OnEventParticipate(playerInstance), Containers.Players());
 
-					try
+                    try
 					{
 						playerInstance.eventSaveData();
 					}
