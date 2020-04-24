@@ -815,7 +815,7 @@ public class PcInventory extends Inventory
 
 	public static int[][] restoreVisibleInventory(int objectId)
 	{
-		int[][] paperdoll = new int[32][3];
+		int[][] paperdoll = new int[Inventory.PAPERDOLL_TOTALSLOTS][4];
 		Connection con = null;
 
 		try
@@ -831,7 +831,8 @@ public class PcInventory extends Inventory
 				int slot = invdata.getInt("loc_data");
 				paperdoll[slot][0] = invdata.getInt("object_id");
 				paperdoll[slot][1] = invdata.getInt("item_id");
-				paperdoll[slot][2] = invdata.getInt("enchant_level");
+                paperdoll[slot][2] = invdata.getInt("enchant_level");
+                paperdoll[slot][3] = invdata.getInt("appareance");
 				/*if (slot == Inventory.PAPERDOLL_RHAND)
                 {
 					paperdoll[Inventory.PAPERDOLL_RHAND][0] = invdata.getInt("object_id");

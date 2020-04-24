@@ -54,7 +54,8 @@ import java.util.logging.Level;
  */
 public abstract class Inventory extends ItemContainer
 {
-	//
+
+    //
 	public interface PaperdollListener
 	{
 		void notifyEquiped(int slot, L2ItemInstance inst, Inventory inventory);
@@ -79,24 +80,53 @@ public abstract class Inventory extends ItemContainer
 	public static final int PAPERDOLL_LFINGER = 14;
 	public static final int PAPERDOLL_LBRACELET = 15;
 	public static final int PAPERDOLL_RBRACELET = 16;
-	public static final int PAPERDOLL_DECO1 = 17;
-	public static final int PAPERDOLL_DECO2 = 18;
-	public static final int PAPERDOLL_DECO3 = 19;
-	public static final int PAPERDOLL_DECO4 = 20;
-	public static final int PAPERDOLL_DECO5 = 21;
-	public static final int PAPERDOLL_DECO6 = 22;
-	public static final int PAPERDOLL_CLOAK = 23;
-	public static final int PAPERDOLL_BELT = 24;
-	public static final int PAPERDOLL_BROOCH = 25;
-	public static final int PAPERDOLL_JEWELRY1 = 26;
-	public static final int PAPERDOLL_JEWELRY2 = 27;
-	public static final int PAPERDOLL_JEWELRY3 = 28;
-	public static final int PAPERDOLL_JEWELRY4 = 29;
-	public static final int PAPERDOLL_JEWELRY5 = 30;
-	public static final int PAPERDOLL_JEWELRY6 = 31;
-	public static final int PAPERDOLL_TOTALSLOTS = 32;
+    public static final int PAPERDOLL_AGATHION1 = 17; // 152
+    public static final int PAPERDOLL_AGATHION2 = 18; // 152
+    public static final int PAPERDOLL_AGATHION3 = 19; // 152
+    public static final int PAPERDOLL_AGATHION4 = 20; // 152
+    public static final int PAPERDOLL_AGATHION5 = 21; // 152
+    public static final int PAPERDOLL_DECO1 = 22;
+	public static final int PAPERDOLL_DECO2 = 23;
+	public static final int PAPERDOLL_DECO3 = 24;
+	public static final int PAPERDOLL_DECO4 = 25;
+	public static final int PAPERDOLL_DECO5 = 26;
+	public static final int PAPERDOLL_DECO6 = 27;
+	public static final int PAPERDOLL_CLOAK = 28;
+	public static final int PAPERDOLL_BELT = 29;
+	public static final int PAPERDOLL_BROOCH = 30;
+	public static final int PAPERDOLL_JEWELRY1 = 31;
+	public static final int PAPERDOLL_JEWELRY2 = 32;
+	public static final int PAPERDOLL_JEWELRY3 = 33;
+	public static final int PAPERDOLL_JEWELRY4 = 34;
+	public static final int PAPERDOLL_JEWELRY5 = 35;
+	public static final int PAPERDOLL_JEWELRY6 = 36;
+    public static final int PAPERDOLL_ARTIFACT_BOOK = 37;
+    public static final int PAPERDOLL_ARTIFACT1 = 38; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT2 = 39; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT3 = 40; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT4 = 41; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT5 = 42; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT6 = 43; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT7 = 44; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT8 = 45; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT9 = 46; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT10 = 47; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT11 = 48; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT12 = 49; // Artifact Balance
+    public static final int PAPERDOLL_ARTIFACT13 = 50; // Artifact Spirit
+    public static final int PAPERDOLL_ARTIFACT14 = 51; // Artifact Spirit
+    public static final int PAPERDOLL_ARTIFACT15 = 52; // Artifact Spirit
+    public static final int PAPERDOLL_ARTIFACT16 = 53; // Artifact Protection
+    public static final int PAPERDOLL_ARTIFACT17 = 54; // Artifact Protection
+    public static final int PAPERDOLL_ARTIFACT18 = 55; // Artifact Protection
+    public static final int PAPERDOLL_ARTIFACT19 = 56; // Artifact Support
+    public static final int PAPERDOLL_ARTIFACT20 = 57; // Artifact Support
+    public static final int PAPERDOLL_ARTIFACT21 = 58; // Artifact Support
 
-	//Speed percentage mods
+    public static final int PAPERDOLL_TOTALSLOTS = 59;
+
+
+    //Speed percentage mods
 	public static final double MAX_ARMOR_WEIGHT = 12000;
 
 	private final L2ItemInstance[] _paperdoll;

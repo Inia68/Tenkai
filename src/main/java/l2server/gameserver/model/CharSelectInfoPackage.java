@@ -277,7 +277,20 @@ public class CharSelectInfoPackage
 		return _paperdoll[Inventory.PAPERDOLL_RHAND][2];
 	}
 
-	public void setReputation(int k)
+    public int getEnchantEffect(int slot)
+    {
+        return _paperdoll[slot][2];
+    }
+
+
+
+    public int getPaperdollItemVisualId(int slot)
+    {
+        return _paperdoll[slot][3];
+    }
+
+
+    public void setReputation(int k)
 	{
 		_reputation = k;
 	}

@@ -72,16 +72,16 @@ public class CharSelectionInfo extends L2GameServerPacket {
     @Override
     protected final void writeImpl() {
         int size = characterPackages.length;
-        writeD(size);
+        writeD(size); // Characters already created
 
         // Can prevent players from creating new characters (if 0); (if 1, the client will ask if chars may be created (0x13) Response: (0x0D) )
         writeD(0x07);
         writeC(0x00);
-
-        //writeC(0x02); // Salvation
-        writeD(0x01);
         writeC(0x01);
-        writeC(0x00);
+        writeD(0x02); // 1 = Korean client
+        writeC(0x00); // gift message
+        writeC(0x00); // Balthus
+
 
         long lastAccess = 0L;
 
@@ -102,14 +102,14 @@ public class CharSelectionInfo extends L2GameServerPacket {
             writeS(loginName);
             writeD(sessionId);
             writeD(charInfoPackage.getClanId());
-            writeD(0x00); // ??
+            writeD(0x00); // Builder level
 
             writeD(charInfoPackage.getSex());
             writeD(charInfoPackage.getTemplate().race.ordinal());
 
             writeD(charInfoPackage.getTemplate().startingClassId);
 
-            writeD(0x01); // active ??
+            writeD(0x01); // Gameservername
 
             writeD(charInfoPackage.getX()); // x
             writeD(charInfoPackage.getY()); // y
@@ -125,55 +125,7 @@ public class CharSelectionInfo extends L2GameServerPacket {
 
             writeD(charInfoPackage.getReputation()); // reputation
             writeD(charInfoPackage.getPkKills());
-
             writeD(charInfoPackage.getPvPKills());
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_REAR));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_LEAR));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_NECK));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_RFINGER));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_LFINGER));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_HEAD));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_LHAND));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_GLOVES));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_CHEST));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_LEGS));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_FEET));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_CLOAK));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_RHAND));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_HAIR));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_HAIR2));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_RBRACELET));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_LBRACELET));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_DECO1));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_DECO2));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_DECO3));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_DECO4));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_DECO5));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_DECO6));
-            writeD(charInfoPackage.getPaperdollItemId(Inventory.PAPERDOLL_BELT));
-
-            // Brooches here?
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
-            writeD(0x00);
 
             writeD(0x00);
             writeD(0x00);
@@ -184,14 +136,23 @@ public class CharSelectionInfo extends L2GameServerPacket {
             writeD(0x00);
             writeD(0x00);
             writeD(0x00);
-            writeH(0x00);
 
-            // Salvation unknown
-            //writeD(0x00);
-            //writeD(0x00);
-            //writeD(0x00);
-            //writeD(0x00);
-            //writeD(0x00);
+            for (int slot : getPaperdollOrder())
+            {
+                writeD(charInfoPackage.getPaperdollItemId(slot));
+            }
+
+            for (int slot : getPaperdollOrderVisualId())
+            {
+                writeD(charInfoPackage.getPaperdollItemVisualId(slot));
+            }
+
+            writeH(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_CHEST)); // Upper Body enchant level
+            writeH(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_LEGS)); // Lower Body enchant level
+            writeH(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_HEAD)); // Headgear enchant level
+            writeH(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_GLOVES)); // Gloves enchant level
+            writeH(charInfoPackage.getEnchantEffect(Inventory.PAPERDOLL_FEET)); // Boots enchant level
+
 
             writeD(charInfoPackage.getHairStyle());
             writeD(charInfoPackage.getHairColor());
@@ -217,7 +178,9 @@ public class CharSelectionInfo extends L2GameServerPacket {
 
             writeC(charInfoPackage.getEnchantEffect() > 127 ? 127 : charInfoPackage.getEnchantEffect());
 
-            writeQ(charInfoPackage.getAugmentationId());
+            //writeQ(charInfoPackage.getAugmentationId());
+            writeD(0);
+            writeD(0);
 
             //writeD(charInfoPackage.getTransformId()); // Used to display Transformations
             writeD(0x00); // Currently on retail when you are on character select you don't see your transformation.
@@ -232,13 +195,11 @@ public class CharSelectionInfo extends L2GameServerPacket {
 
             // High Five by Vistall:
             writeD(charInfoPackage.getVitalityPoints());
-
             writeD(charInfoPackage.getVitalityLevel() > 0 ? (int) Config.VITALITY_MULTIPLIER * 100 : 0); // Vitality Exp bonus
             writeD(0x00); // Vitality Items count
-
             writeD(0x01); // Is activated
-
-            writeH(0x00); // ???
+            writeC(0x00); // isNoble
+            writeC(0x00); // isHero
             writeC(charInfoPackage.isShowingHat() ? 1 : 0); // ???
         }
     }
@@ -433,4 +394,93 @@ public class CharSelectionInfo extends L2GameServerPacket {
         }
         return charInfopackage;
     }
+
+    private static final int[] PAPERDOLL_ORDER = new int[]
+            {
+                    Inventory.PAPERDOLL_UNDER,
+                    Inventory.PAPERDOLL_REAR,
+                    Inventory.PAPERDOLL_LEAR,
+                    Inventory.PAPERDOLL_NECK,
+                    Inventory.PAPERDOLL_RFINGER,
+                    Inventory.PAPERDOLL_LFINGER,
+                    Inventory.PAPERDOLL_HEAD,
+                    Inventory.PAPERDOLL_RHAND,
+                    Inventory.PAPERDOLL_LHAND,
+                    Inventory.PAPERDOLL_GLOVES,
+                    Inventory.PAPERDOLL_CHEST,
+                    Inventory.PAPERDOLL_LEGS,
+                    Inventory.PAPERDOLL_FEET,
+                    Inventory.PAPERDOLL_CLOAK,
+                    Inventory.PAPERDOLL_RHAND,
+                    Inventory.PAPERDOLL_HAIR,
+                    Inventory.PAPERDOLL_HAIR2,
+                    Inventory.PAPERDOLL_RBRACELET,
+                    Inventory.PAPERDOLL_LBRACELET,
+                    Inventory.PAPERDOLL_AGATHION1, // 152
+                    Inventory.PAPERDOLL_AGATHION2, // 152
+                    Inventory.PAPERDOLL_AGATHION3, // 152
+                    Inventory.PAPERDOLL_AGATHION4, // 152
+                    Inventory.PAPERDOLL_AGATHION5, // 152
+                    Inventory.PAPERDOLL_DECO1,
+                    Inventory.PAPERDOLL_DECO2,
+                    Inventory.PAPERDOLL_DECO3,
+                    Inventory.PAPERDOLL_DECO4,
+                    Inventory.PAPERDOLL_DECO5,
+                    Inventory.PAPERDOLL_DECO6,
+                    Inventory.PAPERDOLL_BELT,
+                    Inventory.PAPERDOLL_BROOCH,
+                    Inventory.PAPERDOLL_JEWELRY1,
+                    Inventory.PAPERDOLL_JEWELRY2,
+                    Inventory.PAPERDOLL_JEWELRY3,
+                    Inventory.PAPERDOLL_JEWELRY4,
+                    Inventory.PAPERDOLL_JEWELRY5,
+                    Inventory.PAPERDOLL_JEWELRY6,
+                    Inventory.PAPERDOLL_ARTIFACT_BOOK, // 152
+                    Inventory.PAPERDOLL_ARTIFACT1, // 152
+                    Inventory.PAPERDOLL_ARTIFACT2, // 152
+                    Inventory.PAPERDOLL_ARTIFACT3, // 152
+                    Inventory.PAPERDOLL_ARTIFACT4, // 152
+                    Inventory.PAPERDOLL_ARTIFACT5, // 152
+                    Inventory.PAPERDOLL_ARTIFACT6, // 152
+                    Inventory.PAPERDOLL_ARTIFACT7, // 152
+                    Inventory.PAPERDOLL_ARTIFACT8, // 152
+                    Inventory.PAPERDOLL_ARTIFACT9, // 152
+                    Inventory.PAPERDOLL_ARTIFACT10, // 152
+                    Inventory.PAPERDOLL_ARTIFACT11, // 152
+                    Inventory.PAPERDOLL_ARTIFACT12, // 152
+                    Inventory.PAPERDOLL_ARTIFACT13, // 152
+                    Inventory.PAPERDOLL_ARTIFACT14, // 152
+                    Inventory.PAPERDOLL_ARTIFACT15, // 152
+                    Inventory.PAPERDOLL_ARTIFACT16, // 152
+                    Inventory.PAPERDOLL_ARTIFACT17, // 152
+                    Inventory.PAPERDOLL_ARTIFACT18, // 152
+                    Inventory.PAPERDOLL_ARTIFACT19, // 152
+                    Inventory.PAPERDOLL_ARTIFACT20, // 152
+                    Inventory.PAPERDOLL_ARTIFACT21 // 152
+            };
+
+    private static final int[] PAPERDOLL_ORDER_VISUAL_ID = new int[]
+            {
+                    Inventory.PAPERDOLL_RHAND,
+                    Inventory.PAPERDOLL_LHAND,
+                    Inventory.PAPERDOLL_GLOVES,
+                    Inventory.PAPERDOLL_CHEST,
+                    Inventory.PAPERDOLL_LEGS,
+                    Inventory.PAPERDOLL_FEET,
+                    Inventory.PAPERDOLL_RHAND,
+                    Inventory.PAPERDOLL_HAIR,
+                    Inventory.PAPERDOLL_HAIR2,
+            };
+
+
+    public int[] getPaperdollOrder()
+    {
+        return PAPERDOLL_ORDER;
+    }
+
+    public int[] getPaperdollOrderVisualId()
+    {
+        return PAPERDOLL_ORDER_VISUAL_ID;
+    }
+
 }

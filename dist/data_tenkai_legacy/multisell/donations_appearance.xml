@@ -560,6 +560,7 @@
         <ingredient id="4037" count="8" /> <!-- Coin of Luck -->
         <production id="26271" count="1" /> <!-- Halloween Sigil -->
     </item>
+
     <item>
         <ingredient id="4037" count="15" /> <!-- Coin of Luck -->
         <production id="26273" count="1" /> <!-- Halloween Outfit Appearance Stone -->
@@ -602,6 +603,6 @@
     </item>
     <item>
         <ingredient id="4037" count="5" /> <!-- Coin of Luck -->
-        <production id="23853" count="1" /> <!-- Knight Suit Appearance Stone -->
+        <production id="23853" count="1" /> <!-- Transparent Appearance Stone -->
     </item>
 </list>

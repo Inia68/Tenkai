@@ -42,12 +42,14 @@ public final class UserInfo extends L2GameServerPacket
 		ByteBuffer buffer = ByteBuffer.allocate(500).order(ByteOrder.LITTLE_ENDIAN);
 
 		// Write data to the buffer
-		buffer.putShort((short) 0x17);
+		buffer.putInt(player.getObjectId());
+        buffer.putInt(5);
+        buffer.putShort((short)24);
 
 		// Mask
-		buffer.put((byte) 0xff);
-		buffer.put((byte) 0xff);
-		buffer.put((byte) 0xfe);
+		buffer.put((byte) 0x00);
+		buffer.put((byte) 0x00);
+		buffer.put((byte) 0x00);
 
 		int relation = 0x00;
 		if (player.getClan() != null)
@@ -66,7 +68,6 @@ public final class UserInfo extends L2GameServerPacket
 
 		// Basic info
 		buffer.putShort((short) (player.getName().length() * 2 + 16));
-		buffer.putShort((short) player.getName().length());
 		for (char c : player.getName().toCharArray())
 		{
 			buffer.putShort((short) c);
@@ -254,14 +255,16 @@ public final class UserInfo extends L2GameServerPacket
 		buffer.putInt(RaidBossPointsManager.getInstance().getPointsByOwnerId(player.getObjectId())); // Raid points
 
 		// Unknown
-		// buffer.putShort((short) 11);
+		buffer.putShort((short) 12);
         buffer.putShort((short) 9);
 		buffer.put((byte) player.getInventory().getMaxTalismanCount());
 		buffer.put((byte) player.getInventory().getMaxJewelryCount());
 		buffer.put((byte) player.getTeam());
 		buffer.put(
 				(byte) 0); //Player floor effects: 0 nothing, 1 red circle (intense), 2 white circle, 3 red circle (pale)
-		buffer.put((byte) 0);
+
+
+        buffer.put((byte) 0);
 		buffer.put((byte) 0);
         buffer.put((byte) 0);
         //Salvation
@@ -289,6 +292,14 @@ public final class UserInfo extends L2GameServerPacket
 		buffer.putInt(1);
 		buffer.putShort((short) 0);
 		buffer.put((byte) (player.hasCoCAura() ? 100 : 0x00));
+
+        buffer.putShort((short)26);
+        buffer.putInt(-1);
+        buffer.putInt(0x00);
+        buffer.putInt(0x00);
+        buffer.putInt(0x00);
+        buffer.putInt(0x00);
+        buffer.putInt(0x00);
 
 		int size = buffer.position();
 		buffer.position(0);
