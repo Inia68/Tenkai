@@ -363,6 +363,16 @@ public abstract class Inventory extends ItemContainer
 							player.removeSkill(enchantSkill, false, enchantSkill.isPassive());
 							update = true;
 						}
+                        else {
+                            int x = 0;
+                            enchantSkill = ((L2Armor) it).getEnchantSkill(enchant + "-" + 0);
+                            while (enchantSkill != null) {
+                                player.removeSkill(enchantSkill, false, enchantSkill.isPassive());
+                                x++;
+                                enchantSkill = ((L2Armor) it).getEnchantSkill(enchant + "-" + x);
+                                update = true;
+                            }
+                        }
 					}
 				}
 			}
@@ -470,11 +480,11 @@ public abstract class Inventory extends ItemContainer
 							update = true;
 						} else {
 						    int x = 0;
-                            enchantSkill = ((L2Armor) it).getEnchantSkill(enchant * 100000 + 0);
+                            enchantSkill = ((L2Armor) it).getEnchantSkill(enchant + "-" + 0);
 						    while (enchantSkill != null) {
                                 player.addSkill(enchantSkill, false);
                                 x++;
-                                enchantSkill = ((L2Armor) it).getEnchantSkill(enchant * 100000 + x);
+                                enchantSkill = ((L2Armor) it).getEnchantSkill(enchant + "-" + x);
                             }
                         }
 					}

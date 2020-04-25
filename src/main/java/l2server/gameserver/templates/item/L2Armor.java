@@ -25,6 +25,8 @@ import l2server.log.Log;
 import l2server.util.StringUtil;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import gnu.trove.TIntObjectHashMap;
 
@@ -37,6 +39,8 @@ public final class L2Armor extends L2Item {
     public static final int MAX_ENCHANT_SKILL = 10;
 
     private TIntObjectHashMap<SkillHolder> _enchantSkills = new TIntObjectHashMap<>();
+    private Map<String, SkillHolder> _enchantManySkills = new HashMap<>();
+
     // skill that activates when armor is enchanted +X
     // private final String[] _skill;
     private L2ArmorType _type;
@@ -127,7 +131,7 @@ public final class L2Armor extends L2Item {
                                         .concat("> Couldnt parse ", skill, " in armor enchant skills! item ", toString()));
                             }
                             if (id > 0 && level > 0) {
-                                _enchantSkills.put(enchant * 100000 + x, new SkillHolder(id, level));
+                                _enchantManySkills.put("" + enchant + "-" +  x, new SkillHolder(id, level));
                                 x += 1;
                             }
                         }
@@ -165,6 +169,15 @@ public final class L2Armor extends L2Item {
      */
     public L2Skill getEnchantSkill(int enchant) {
         SkillHolder sh = _enchantSkills.get(enchant);
+        if (sh == null) {
+            return null;
+        }
+
+        return sh.getSkill();
+    }
+
+    public L2Skill getEnchantSkill(String enchant) {
+        SkillHolder sh = _enchantManySkills.get(enchant);
         if (sh == null) {
             return null;
         }
