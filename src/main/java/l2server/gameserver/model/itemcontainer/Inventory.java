@@ -468,7 +468,15 @@ public abstract class Inventory extends ItemContainer
 						{
 							player.addSkill(enchantSkill, false);
 							update = true;
-						}
+						} else {
+						    int x = 0;
+                            enchantSkill = ((L2Armor) it).getEnchantSkill(enchant * 100000 + 0);
+						    while (enchantSkill != null) {
+                                player.addSkill(enchantSkill, false);
+                                x++;
+                                enchantSkill = ((L2Armor) it).getEnchantSkill(enchant * 100000 + x);
+                            }
+                        }
 					}
 				}
 			}
