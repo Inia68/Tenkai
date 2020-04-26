@@ -2575,6 +2575,39 @@
           material="steel"
           weight="0" crystal_type="none">
     </item>
+<<<<<<< HEAD
+    <!-- STR +5 when wearing the Talisman. Effect does not stack with identical ones. -->
+    <item id="47435" type="Armor" name="Mysterious Talisman - STR - 2-hour" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="120">
+    </item>
+    <!-- INT +5 when wearing the Talisman. Effect does not stack with identical ones. -->
+    <item id="47436" type="Armor" name="Mysterious Talisman - INT - 2-hour" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="120">
+
+    </item>
+    <!-- DEX +5 when wearing the Talisman. Effect does not stack with identical ones. -->
+    <item id="47437" type="Armor" name="Mysterious Talisman - DEX - 2-hour" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="120">
+    </item>
+    <!-- WIT +5 when wearing the Talisman. Effect does not stack with identical ones. -->
+    <item id="47438" type="Armor" name="Mysterious Talisman - WIT - 2-hour" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="120">
+    </item>
+    <!-- CON +5 when wearing the Talisman. Effect does not stack with identical ones. -->
+    <item id="47439" type="Armor" name="Mysterious Talisman - CON - 2-hour" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="120">
+    </item>
+    <!-- MEN +5 when wearing the Talisman. Effect does not stack with identical ones. -->
+    <item id="47440" type="Armor" name="Mysterious Talisman - MEN - 2-hour" icon="icon.npoint_talisman_stat"
+          defaultAction="equip"
+          bodypart="deco1" crystalType="none" material="steel" weight="0" time="120">
+    </item>
+=======
 	<!--
 	Dimensional Item
 	STR +5 when wearing the Talisman. Effect does not stack with identical ones.
@@ -2629,6 +2662,7 @@
 		  bodypart="deco1" crystalType="none" material="steel" weight="0" time="120">
 		<skill id="18385" level="2"/>
 	</item>
+>>>>>>> origin/master
     <!-- Attack Attribute Bonus +50 when wearing the Talisman. Effect does not stack with identical ones. -->
     <item id="47441" type="Weapon" name="Mysterious Talisman - Attack Attribute - 2-hour"
           icon="icon.npoint_talisman_stat" bodypart="none"
@@ -3520,28 +3554,30 @@
 
 		Standard Fishing Bait. Fish using this bait to catch a Blueish Box with low probability.
 	-->
-    <item id="47547" type="Weapon" name="Bait" icon="icon.etc_normal_lure" bodypart="none" material="steel" weight="0"
-          crystal_type="none">
-    </item>
+	<item id="47547" type="EtcItem" name="Bait" icon="icon.etc_normal_lure" defaultAction="equip"
+		  etcitemType="lure"
+		  bodypart="lhand" immediateEffect="1" weight="4" price="120" isStackable="true" isOlyRestricted="true">
+	</item>
     <!--
 		Fishing time: 105 seconds
 		Standby time: 15 seconds
 
 		Fishing bait that can be used by characters of Level 99 or higher. Fish using this bait to catch a Reddish Box with low probability.
 	-->
-    <item id="47548" type="Weapon" name="Bait - R99" icon="icon.etc_huge_lure" bodypart="none" material="steel"
-          weight="0" crystal_type="none">
-    </item>
+	<item id="47548" type="EtcItem" name="Bait - R99" icon="Bait - R99" defaultAction="equip"
+		  etcitemType="lure"
+		  bodypart="lhand" immediateEffect="1" weight="4" price="120" isStackable="true" isOlyRestricted="true">
+	</item>
     <!--
 		Fishing time: 105 seconds
 		Standby time: 15 seconds
 
 		Special Fishing Bait. Fish using this bait to catch a Purplish Box with low probability. Can be used outside PC Cafes.
 	-->
-    <item id="47549" type="Weapon" name="PC Cafe Bait" icon="icon.etc_bait_i01" bodypart="none" material="steel"
-          weight="0"
-          crystal_type="none">
-    </item>
+	<item id="47549" type="EtcItem" name="PC Cafe Bait" icon="icon.etc_bait_i01" defaultAction="equip"
+		  etcitemType="lure"
+		  bodypart="lhand" immediateEffect="1" weight="4" price="120" isStackable="true" isOlyRestricted="true">
+	</item>
     <!-- Can be exchanged for a Fish Stew item through a Fishing Guild member. -->
     <item id="47550" type="Weapon" name="Ugly Fish" icon="icon.etc_angler_i01" bodypart="none" material="steel"
           weight="0" crystal_type="none">
@@ -3580,66 +3616,81 @@
 
 		A fishing rod modified personally by Santiago, head of the Fishing Guild. Engraved with the name of a legendary master angler of the east. Fishing Shots consumed: 1
 	-->
-    <item id="47557" type="Weapon" name="Master Fishing Rod - Stage 1" icon="icon.fishing_rod01" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-        <set stat="pAtk" val="1" />
-        <set stat="mAtk" val="1" />
-        <set stat="pAtkSpd" val="325" />
-        <baseSub stat="accCombat" val="3.75" />
-    </item>
+	<item id="47557" type="Weapon" name="Master Fishing Rod - Stage 1" icon="fishing_rod01" defaultAction="equip"
+		  weaponType="fishingrod"
+		  bodypart="lrhand" randomDamage="1" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" weight="1000"
+		  price="30000"
+		  itemEquipOption="{no_attack}">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<baseSub stat="accCombat" val="3.75" />
+		<baseSub stat="accMagic" val="3.75" />
+		<set stat="pAtkSpd" val="325" />
+	</item>
     <!--
 		Fishing time reduced by: 15 seconds
 
 		A fishing rod modified personally by Santiago, head of the Fishing Guild. Engraved with the name of a legendary master angler of the east. Fishing Shots consumed: 1
 	-->
-    <item id="47558" type="Weapon" name="Master Fishing Rod - Stage 2" icon="icon.fishing_rod02" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-        <set stat="pAtk" val="1" />
-        <set stat="mAtk" val="1" />
-        <set stat="pAtkSpd" val="325" />
-        <baseSub stat="accCombat" val="3.75" />
-    </item>
+	<item id="47558" type="Weapon" name="Master Fishing Rod - Stage 2" icon="fishing_rod01" defaultAction="equip"
+		  weaponType="fishingrod"
+		  bodypart="lrhand" randomDamage="1" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" weight="1000"
+		  price="30000"
+		  itemEquipOption="{no_attack}">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<baseSub stat="accCombat" val="3.75" />
+		<baseSub stat="accMagic" val="3.75" />
+		<set stat="pAtkSpd" val="325" />
+	</item>
     <!--
 		Fishing time reduced by: 20 seconds
 
 		A fishing rod modified personally by Santiago, head of the Fishing Guild. Engraved with the name of a legendary master angler of the east. Fishing Shots consumed: 1
 	-->
-    <item id="47559" type="Weapon" name="Master Fishing Rod - Stage 3" icon="icon.fishing_rod03" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-        <set stat="pAtk" val="1" />
-        <set stat="mAtk" val="1" />
-        <set stat="pAtkSpd" val="325" />
-        <baseSub stat="accCombat" val="3.75" />
-    </item>
+	<item id="47559" type="Weapon" name="Master Fishing Rod - Stage 3" icon="fishing_rod01" defaultAction="equip"
+		  weaponType="fishingrod"
+		  bodypart="lrhand" randomDamage="1" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" weight="1000"
+		  price="30000"
+		  itemEquipOption="{no_attack}">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<baseSub stat="accCombat" val="3.75" />
+		<baseSub stat="accMagic" val="3.75" />
+		<set stat="pAtkSpd" val="325" />
+	</item>
     <!--
 		Fishing time reduced by: 25 seconds
 
 		A fishing rod modified personally by Santiago, head of the Fishing Guild. Engraved with the name of a legendary master angler of the east. Fishing Shots consumed: 1
 	-->
-    <item id="47560" type="Weapon" name="Master Fishing Rod - Stage 4" icon="icon.fishing_rod04" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-        <set stat="pAtk" val="1" />
-        <set stat="mAtk" val="1" />
-        <set stat="pAtkSpd" val="325" />
-        <baseSub stat="accCombat" val="3.75" />
-    </item>
+	<item id="47560" type="Weapon" name="Master Fishing Rod - Stage 4" icon="fishing_rod01" defaultAction="equip"
+		  weaponType="fishingrod"
+		  bodypart="lrhand" randomDamage="1" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" weight="1000"
+		  price="30000"
+		  itemEquipOption="{no_attack}">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<baseSub stat="accCombat" val="3.75" />
+		<baseSub stat="accMagic" val="3.75" />
+		<set stat="pAtkSpd" val="325" />
+	</item>
     <!--
 		Fishing time reduced by: 30 seconds
 
 		A fishing rod modified personally by Santiago, head of the Fishing Guild. Engraved with the name of a legendary master angler of the east. Fishing Shots consumed: 1
 	-->
-    <item id="47561" type="Weapon" name="Master Fishing Rod - Stage 5" icon="icon.fishing_rod05" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-        <set stat="pAtk" val="1" />
-        <set stat="mAtk" val="1" />
-        <set stat="pAtkSpd" val="325" />
-        <baseSub stat="accCombat" val="3.75" />
-    </item>
+	<item id="47561" type="Weapon" name="Master Fishing Rod - Stage 6" icon="fishing_rod01" defaultAction="equip"
+		  weaponType="fishingrod"
+		  bodypart="lrhand" randomDamage="1" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" weight="1000"
+		  price="30000"
+		  itemEquipOption="{no_attack}">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<baseSub stat="accCombat" val="3.75" />
+		<baseSub stat="accMagic" val="3.75" />
+		<set stat="pAtkSpd" val="325" />
+	</item>
     <!-- Ingredient necessary for production of the Master Fishing Rod. Also needed when leveling up the Master Fishing Rod. -->
     <item id="47562" type="Weapon" name="Santiago's Reel Fragment" icon="icon.etc_power_of_soul" bodypart="none"
           material="steel"
