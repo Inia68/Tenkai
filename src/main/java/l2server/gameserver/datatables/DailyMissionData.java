@@ -34,10 +34,6 @@ import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-/**
- * @author LasTravel
- * @author Pere
- */
 
 public class DailyMissionData implements IXmlReader
 {

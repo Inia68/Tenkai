@@ -29,6 +29,7 @@ import l2server.gameserver.model.zone.L2ZoneType;
 import l2server.gameserver.model.zone.type.L2FishingZone;
 import l2server.gameserver.model.zone.type.L2WaterZone;
 import l2server.gameserver.network.SystemMessageId;
+import l2server.gameserver.network.serverpackets.ExAutoFishAvailable;
 import l2server.gameserver.network.serverpackets.InventoryUpdate;
 import l2server.gameserver.network.serverpackets.SystemMessage;
 import l2server.gameserver.templates.item.L2Weapon;
@@ -37,7 +38,7 @@ import l2server.gameserver.templates.skills.L2SkillType;
 import l2server.gameserver.util.Util;
 import l2server.util.Rnd;
 
-public class Fishing implements ISkillHandler
+public class FishingOld implements ISkillHandler
 {
 	private static final L2SkillType[] SKILL_IDS = {L2SkillType.FISHING};
 
@@ -209,12 +210,15 @@ public class Fishing implements ISkillHandler
 		if (!canFish)
 		{
 			// You can't fish here
-			player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_FISH_HERE));
-			if (!player.isGM())
+            player.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.CANNOT_FISH_HERE));
+            player.sendPacket(ExAutoFishAvailable.NO);
+            if (!player.isGM())
 			{
 				return;
 			}
-		}
+		} else {
+            player.sendPacket(ExAutoFishAvailable.YES);
+        }
 		// Has enough bait, consume 1 and update inventory. Start fishing
 		// follows.
 		lure2 = player.getInventory()

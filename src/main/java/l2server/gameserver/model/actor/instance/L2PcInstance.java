@@ -15,6 +15,8 @@
 
 package l2server.gameserver.model.actor.instance;
 
+import l2server.gameserver.enums.ShotType;
+import handlers.skillhandlers.FishingOld;
 import l2server.Config;
 import l2server.L2DatabaseFactory;
 import l2server.gameserver.Announcements;
@@ -103,9 +105,9 @@ import l2server.gameserver.model.entity.Instance;
 import l2server.gameserver.model.entity.Siege;
 import l2server.gameserver.model.event.Containers;
 import l2server.gameserver.model.event.EventDispatcher;
-import l2server.gameserver.model.event.impl.creature.npc.OnAttackableKill;
 import l2server.gameserver.model.event.impl.creature.player.OnPlayerPvPKill;
 import l2server.gameserver.model.event.timers.TimerHolder;
+import l2server.gameserver.model.fishing.Fishing;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.itemcontainer.ItemContainer;
 import l2server.gameserver.model.itemcontainer.PcAuction;
@@ -130,95 +132,8 @@ import l2server.gameserver.model.zone.type.L2TownZone;
 import l2server.gameserver.network.L2GameClient;
 import l2server.gameserver.network.SystemMessageId;
 import l2server.gameserver.network.clientpackets.Say2;
-import l2server.gameserver.network.serverpackets.AbnormalStatusUpdateFromTarget;
-import l2server.gameserver.network.serverpackets.AcquireSkillList;
-import l2server.gameserver.network.serverpackets.ActionFailed;
-import l2server.gameserver.network.serverpackets.ChangeWaitType;
-import l2server.gameserver.network.serverpackets.CharInfo;
-import l2server.gameserver.network.serverpackets.ConfirmDlg;
-import l2server.gameserver.network.serverpackets.CreatureSay;
-import l2server.gameserver.network.serverpackets.EtcStatusUpdate;
-import l2server.gameserver.network.serverpackets.ExAdenaInvenCount;
-import l2server.gameserver.network.serverpackets.ExAutoSoulShot;
-import l2server.gameserver.network.serverpackets.ExBasicActionList;
-import l2server.gameserver.network.serverpackets.ExCallToChangeClass;
-import l2server.gameserver.network.serverpackets.ExDuelUpdateUserInfo;
-import l2server.gameserver.network.serverpackets.ExFishingEnd;
-import l2server.gameserver.network.serverpackets.ExFishingStart;
-import l2server.gameserver.network.serverpackets.ExFlyMove;
-import l2server.gameserver.network.serverpackets.ExFlyMoveBroadcast;
-import l2server.gameserver.network.serverpackets.ExGetBookMarkInfoPacket;
-import l2server.gameserver.network.serverpackets.ExGetOnAirShip;
-import l2server.gameserver.network.serverpackets.ExMentorList;
-import l2server.gameserver.network.serverpackets.ExOlympiadMode;
-import l2server.gameserver.network.serverpackets.ExPledgeCount;
-import l2server.gameserver.network.serverpackets.ExPrivateStoreSetWholeMsg;
-import l2server.gameserver.network.serverpackets.ExSetCompassZoneCode;
-import l2server.gameserver.network.serverpackets.ExShowScreenMessage;
-import l2server.gameserver.network.serverpackets.ExSpawnEmitter;
-import l2server.gameserver.network.serverpackets.ExStartScenePlayer;
-import l2server.gameserver.network.serverpackets.ExStorageMaxCount;
-import l2server.gameserver.network.serverpackets.ExTacticalSign;
-import l2server.gameserver.network.serverpackets.ExUserCubics;
-import l2server.gameserver.network.serverpackets.ExUserEffects;
-import l2server.gameserver.network.serverpackets.ExUserLoad;
-import l2server.gameserver.network.serverpackets.ExUserPaperdoll;
-import l2server.gameserver.network.serverpackets.ExVitalityEffectInfo;
-import l2server.gameserver.network.serverpackets.ExVoteSystemInfo;
-import l2server.gameserver.network.serverpackets.ExWaitWaitingSubStituteInfo;
-import l2server.gameserver.network.serverpackets.FriendList;
-import l2server.gameserver.network.serverpackets.FriendPacket;
-import l2server.gameserver.network.serverpackets.FriendStatusPacket;
-import l2server.gameserver.network.serverpackets.GameGuardQuery;
-import l2server.gameserver.network.serverpackets.GetOnVehicle;
-import l2server.gameserver.network.serverpackets.HennaInfo;
-import l2server.gameserver.network.serverpackets.InventoryUpdate;
-import l2server.gameserver.network.serverpackets.ItemList;
-import l2server.gameserver.network.serverpackets.L2GameServerPacket;
-import l2server.gameserver.network.serverpackets.LeaveWorld;
-import l2server.gameserver.network.serverpackets.MagicSkillLaunched;
-import l2server.gameserver.network.serverpackets.MagicSkillUse;
-import l2server.gameserver.network.serverpackets.MyTargetSelected;
-import l2server.gameserver.network.serverpackets.NicknameChanged;
-import l2server.gameserver.network.serverpackets.NpcHtmlMessage;
-import l2server.gameserver.network.serverpackets.ObservationMode;
-import l2server.gameserver.network.serverpackets.ObservationReturn;
-import l2server.gameserver.network.serverpackets.PartySmallWindowUpdate;
-import l2server.gameserver.network.serverpackets.PetInventoryUpdate;
-import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.gameserver.network.serverpackets.PlayerMultiSellList;
-import l2server.gameserver.network.serverpackets.PledgeCrest;
-import l2server.gameserver.network.serverpackets.PledgeShowMemberListDelete;
-import l2server.gameserver.network.serverpackets.PledgeShowMemberListUpdate;
-import l2server.gameserver.network.serverpackets.PrivateStoreListBuy;
-import l2server.gameserver.network.serverpackets.PrivateStoreListSell;
-import l2server.gameserver.network.serverpackets.PrivateStoreManageListBuy;
-import l2server.gameserver.network.serverpackets.PrivateStoreManageListSell;
-import l2server.gameserver.network.serverpackets.PrivateStoreMsgBuy;
-import l2server.gameserver.network.serverpackets.PrivateStoreMsgSell;
-import l2server.gameserver.network.serverpackets.QuestList;
-import l2server.gameserver.network.serverpackets.RecipeShopMsg;
-import l2server.gameserver.network.serverpackets.RecipeShopSellList;
-import l2server.gameserver.network.serverpackets.RelationChanged;
-import l2server.gameserver.network.serverpackets.Ride;
-import l2server.gameserver.network.serverpackets.ServerClose;
-import l2server.gameserver.network.serverpackets.SetupGauge;
-import l2server.gameserver.network.serverpackets.ShortBuffStatusUpdate;
-import l2server.gameserver.network.serverpackets.ShortCutInit;
-import l2server.gameserver.network.serverpackets.SkillCoolTime;
-import l2server.gameserver.network.serverpackets.SkillList;
-import l2server.gameserver.network.serverpackets.Snoop;
-import l2server.gameserver.network.serverpackets.SocialAction;
-import l2server.gameserver.network.serverpackets.StatusUpdate;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.network.serverpackets.StatusUpdate.StatusUpdateDisplay;
-import l2server.gameserver.network.serverpackets.StopMove;
-import l2server.gameserver.network.serverpackets.SystemMessage;
-import l2server.gameserver.network.serverpackets.TargetSelected;
-import l2server.gameserver.network.serverpackets.TargetUnselected;
-import l2server.gameserver.network.serverpackets.TradeDone;
-import l2server.gameserver.network.serverpackets.TradeOtherDone;
-import l2server.gameserver.network.serverpackets.TradeStart;
-import l2server.gameserver.network.serverpackets.UserInfo;
 import l2server.gameserver.stats.Env;
 import l2server.gameserver.stats.Formulas;
 import l2server.gameserver.stats.SkillHolder;
@@ -268,13 +183,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Future;
@@ -863,12 +772,62 @@ public class L2PcInstance extends L2Playable {
     /**
      * Active shots.
      */
-    private final L2ItemInstance[] _activeSoulShots = new L2ItemInstance[4];
-    private final boolean[] _disabledShoulShots = new boolean[4];
+    private final L2ItemInstance[] _activeSoulShots = new L2ItemInstance[5];
+    private final boolean[] _disabledShoulShots = new boolean[5];
 
     public final ReentrantLock consumableLock = new ReentrantLock();
 
     private byte _handysBlockCheckerEventArena = -1;
+
+
+    private Set<ShotType> _chargedShots = EnumSet.noneOf(ShotType.class);
+    public boolean isChargedShot(ShotType type)
+    {
+        return _chargedShots.contains(type);
+    }
+
+    /**
+     * @param type of the shot to charge
+     * @return {@code true} if there was no shot of this type charged before, {@code false} otherwise.
+     */
+    public boolean chargeShot(ShotType type)
+    {
+        return _chargedShots.add(type);
+    }
+
+    /**
+     * @param type of the shot to uncharge
+     * @return {@code true} if there was a charged shot of this type, {@code false} otherwise.
+     */
+    public boolean unchargeShot(ShotType type)
+    {
+        return _chargedShots.remove(type);
+    }
+
+    public void unchargeAllShots()
+    {
+        _chargedShots = EnumSet.noneOf(ShotType.class);
+    }
+
+    public void rechargeShots(boolean physical, boolean magic, boolean fish)
+    {
+        // Dummy method to be overriden.
+    }
+
+
+    private final Fishing _fishing = new Fishing(this);
+
+
+    public Fishing getFishing()
+    {
+        return _fishing;
+    }
+
+    public boolean isFishing()
+    {
+        return _fishing.isFishing();
+    }
+
 
     /**
      * new loto ticket
@@ -891,7 +850,6 @@ public class L2PcInstance extends L2Playable {
     private int _alliedVarkaKetra = 0;
 
     private L2Fishing _fishCombat;
-    private boolean _fishing = false;
     private int _fishx = 0;
     private int _fishy = 0;
     private int _fishz = 0;
@@ -11246,13 +11204,7 @@ public class L2PcInstance extends L2Playable {
         return _wantsPeace;
     }
 
-    public boolean isFishing() {
-        return _fishing;
-    }
 
-    public void setFishing(boolean fishing) {
-        _fishing = fishing;
-    }
 
     public void setAllianceWithVarkaKetra(int sideAndLvlOfAlliance) {
         // [-5,-1] varka, 0 neutral, [1,5] ketra
@@ -12993,7 +12945,6 @@ public class L2PcInstance extends L2Playable {
     public void startFishing(int _x, int _y, int _z) {
         stopMove(null);
         setIsImmobilized(true);
-        _fishing = true;
         _fishx = _x;
         _fishy = _y;
         _fishz = _z;
@@ -13018,7 +12969,8 @@ public class L2PcInstance extends L2Playable {
             _fish.setType(-1);
         }
         //sendMessage("Hook x,y: " + _x + "," + _y + " - Water Z, Player Z:" + _z + ", " + getZ()); //debug line, uncoment to show coordinates used in fishing.
-        broadcastPacket(new ExFishingStart(this, _fish.getType(), _x, _y, _z, _lure.isNightLure()));
+        // broadcastPacket(new ExFishingStart(this, _fish.getType(), _x, _y, _z, _lure.isNightLure()));
+        sendPacket(new ExUserInfoFishing(this, true, new Location(_x, _y, _z)));
         sendPacket(new PlaySound(1, "SF_P_01", 0, 0, 0, 0, 0));
         startLookingForFishTask();
     }
@@ -13263,19 +13215,20 @@ public class L2PcInstance extends L2Playable {
     }
 
     public void endFishing(boolean win) {
-        _fishing = false;
+        // _fishing = false;
         _fishx = 0;
         _fishy = 0;
         _fishz = 0;
         //broadcastUserInfo();
         if (_fishCombat == null) {
-            sendPacket(SystemMessage.getSystemMessage(SystemMessageId.BAIT_LOST_FISH_GOT_AWAY));
+            sendPacket(new ExShowScreenMessage("Baits have been lost because the fish got away", 2000));
         }
         _fishCombat = null;
         _lure = null;
         //Ends fishing
-        broadcastPacket(new ExFishingEnd(win, this));
-        sendPacket(SystemMessage.getSystemMessage(SystemMessageId.REEL_LINE_AND_STOP_FISHING));
+        // broadcastPacket(new ExFishingEnd(win, this));
+        sendPacket(new ExUserInfoFishing(this, false));
+        sendPacket(new ExShowScreenMessage("You reel your line in and stop fishing", 2000));
         setIsImmobilized(false);
         stopLookingForFishTask();
     }
@@ -19402,4 +19355,6 @@ public class L2PcInstance extends L2Playable {
             }
         }, 10L, 60000L);
     }
+
+
 }

@@ -15,8 +15,18 @@
 
 package l2server.gameserver.model.zone.type;
 
+import l2server.gameserver.ThreadPoolManager;
 import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.L2Npc;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.fishing.Fishing;
 import l2server.gameserver.model.zone.L2ZoneType;
+import l2server.gameserver.network.serverpackets.ExAutoFishAvailable;
+import l2server.gameserver.network.serverpackets.NpcInfo;
+import l2server.gameserver.network.serverpackets.ServerObjectInfo;
+
+import java.lang.ref.WeakReference;
+import java.util.Collection;
 
 /**
  * A fishing zone
@@ -33,12 +43,76 @@ public class L2FishingZone extends L2ZoneType
 	@Override
 	protected void onEnter(L2Character character)
 	{
-	}
+        character.setInsideZone(L2Character.ZONE_FISHING, true);
+
+        if (character instanceof L2PcInstance)
+        {
+            if (character.isTransformed() && !((L2PcInstance) character).isCursedWeaponEquipped())
+            {
+                character.stopTransformation(true);
+                //((L2PcInstance) character).untransform();
+            }
+            // TODO: update to only send speed status when that packet is known
+            else
+            {
+                ((L2PcInstance) character).broadcastUserInfo();
+            }
+        }
+
+         if (character instanceof L2PcInstance) {
+         ((L2PcInstance)character).sendMessage("You entered fishing zone !"); }
+        final WeakReference<L2PcInstance> weakPlayer = new WeakReference<>(character.getActingPlayer());
+        ThreadPoolManager.getInstance().executeTask(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                final L2PcInstance player = weakPlayer.get();
+                if (player != null)
+                {
+                    final Fishing fishing = player.getFishing();
+                    if (player.isInsideZone(L2Character.ZONE_FISHING))
+                    {
+                        if (fishing.canFish() && !fishing.isFishing())
+                        {
+                            if (fishing.isAtValidLocation())
+                            {
+                                player.sendPacket(ExAutoFishAvailable.YES);
+                            }
+                            else
+                            {
+                                player.sendPacket(ExAutoFishAvailable.NO);
+                            }
+                        }
+                        ThreadPoolManager.getInstance().scheduleGeneral(this, 1500);
+                    }
+                    else
+                    {
+                        player.sendPacket(ExAutoFishAvailable.NO);
+                    }
+                }
+            }
+        });
+
+
+    }
 
 	@Override
 	protected void onExit(L2Character character)
 	{
-	}
+        character.setInsideZone(L2Character.ZONE_FISHING, false);
+
+		if (character instanceof L2PcInstance)
+		{
+			((L2PcInstance)character).sendMessage("You exited fishing zone!");
+		}
+
+        if (character instanceof L2PcInstance)
+        {
+            ((L2PcInstance) character).broadcastUserInfo();
+            ((L2PcInstance) character).sendPacket(ExAutoFishAvailable.NO);
+        }
+    }
 
 	@Override
 	public void onDieInside(L2Character character, L2Character killer)

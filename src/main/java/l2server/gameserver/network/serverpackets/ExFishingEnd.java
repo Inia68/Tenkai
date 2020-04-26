@@ -27,14 +27,40 @@ import l2server.gameserver.model.actor.instance.L2PcInstance;
  */
 public class ExFishingEnd extends L2GameServerPacket
 {
-	private boolean _win;
-	L2Character _activeChar;
+    public enum FishingEndReason
+    {
+        LOSE(0),
+        WIN(1),
+        STOP(2);
 
-	public ExFishingEnd(boolean win, L2PcInstance character)
-	{
-		_win = win;
-		_activeChar = character;
-	}
+        private final int _reason;
+
+        FishingEndReason(int reason)
+        {
+            _reason = reason;
+        }
+
+        public int getReason()
+        {
+            return _reason;
+        }
+    }
+
+    public enum FishingEndType
+    {
+        PLAYER_STOP,
+        PLAYER_CANCEL,
+        ERROR;
+    }
+
+    private final L2PcInstance _player;
+    private final FishingEndReason _reason;
+
+    public ExFishingEnd(L2PcInstance player, FishingEndReason reason)
+    {
+        _player = player;
+        _reason = reason;
+    }
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
@@ -42,7 +68,7 @@ public class ExFishingEnd extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_activeChar.getObjectId());
-		writeC(_win ? 1 : 0);
+        writeD(_player.getObjectId());
+        writeC(_reason.getReason());
 	}
 }

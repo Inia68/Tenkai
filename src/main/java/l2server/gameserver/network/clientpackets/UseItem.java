@@ -796,7 +796,7 @@ public final class UseItem extends L2GameClientPacket
 			else if (weaponItem != null && weaponItem.getItemType() == L2WeaponType.FISHINGROD &&
 					(itemid >= 6519 && itemid <= 6527 || itemid >= 7610 && itemid <= 7613 ||
 							itemid >= 7807 && itemid <= 7809 || itemid >= 8484 && itemid <= 8486 ||
-							itemid >= 8505 && itemid <= 8513))
+							itemid >= 8505 && itemid <= 8513) ||itemid ==  47548)
 			{
 				activeChar.getInventory().setPaperdollItem(Inventory.PAPERDOLL_LHAND, item);
 				activeChar.broadcastUserInfo();

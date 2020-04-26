@@ -5998,6 +5998,7 @@
                     </for>
                 </if>
             </packet>
+			<packet id="0x159" name="ExUserInfoFishing" />
             <packet id="0x15f" name="ExAcquireAPSkillList">
                 <part name="success" type="d" />
                 <part name="reset cost" type="Q" />
@@ -6038,7 +6039,8 @@
                 <part name="curLoad" type="d" />
                 <part name="maxLoad" type="d" />
             </packet>
-            <packet id="0x168" name="ExCompoundOneOK" />
+			<packet id="0x167" name="ExCloseAPListWnd" />
+			<packet id="0x168" name="ExCompoundOneOK" />
             <packet id="0x169" name="ExCompoundOneFail" />
             <packet id="0x16a" name="ExCompoundOneRemoveOK" />
             <packet id="0x16b" name="ExCompoundOneRemoveFail" />
@@ -6048,11 +6050,11 @@
             <packet id="0x16f" name="ExCompoundTwoRemoveFail" />
             <packet id="0x170" name="ExCompoundSuccess" />
             <packet id="0x171" name="ExCompoundFail" />
-            <packet id="0x172" name="ExCloseAPListWnd" />
-            <packet id="0x173" name="ExWorldChatCnt">
+			<packet id="0x172" name="ExCompoundRetryToPutItemOk" />
+            <packet id="0x175" name="ExWorldChatCnt">
                 <part name="count" type="d" />
             </packet>
-            <packet id="0x177" name="ExResponseBeautyListPacket">
+            <packet id="0x179" name="ExResponseBeautyListPacket">
                 <part name="?" type="d" />
                 <part name="hairCount" type="d" id="1" />
                 <for id="1" analyzername="hairs">
@@ -6084,22 +6086,11 @@
                     <part name="remainingUnits" type="d" />
                 </for>
             </packet>
-            <packet id="0x178" name="ExReceiveClientINI" />
-            <packet id="0x179" name="ExAutoFishAvailable" />
-            <packet id="0x17a" name="ExChannlChatEnterWorld">
-                <part name="?" type="d" />
-                <part name="?" type="d" />
-                <part name="?" type="d" />
-                <part name="?" type="d" />
-                <part name="?" type="h" />
+            <packet id="0x17a" name="ExReceiveClientINI" />
+            <packet id="0x17b" name="ExAutoFishAvailable">
             </packet>
-            <packet id="0x17b" name="ExChannlChatPledgeInfo">
-                <part name="?" type="d" />
-                <part name="?" type="d" />
-                <part name="?" type="d" />
-            </packet>
-            <packet id="0x17c" name="ExAutoFishAvailable" />
-            <packet id="0x17d" name="ExConfirmVipAttendanceCheck" />
+            <packet id="0x17c" name="ExChannlChatEnterWorld" />
+            <packet id="0x17d" name="ExChannlChatPledgeInfo" />
             <packet id="0x17e" name="ExVipAttendanceList" />
             <packet id="0x17f" name="ExConfirmVipAttendanceCheck" />
             <packet id="0x180" name="ExShowEnsoulWindow" />
@@ -7801,7 +7792,7 @@
             <packet id="0x102" name="RequestAlchemyConversion" />
             <packet id="0x103" name="RequestSendExecutedUIEventsCount" />
             <packet id="0x104" name="ExSendClientINI" />
-            <packet id="0x105" name="RequestExAutoFish" />
+			<packet id="0x105" name="RequestExAutoFish" />
 			<packet id="0x106" name="RequestVipAttendanceItemList" />
 			<packet id="0x107" name="RequestVipAttendanceCheck" />
 			<packet id="0x108" name="RequestItemEnsoul">

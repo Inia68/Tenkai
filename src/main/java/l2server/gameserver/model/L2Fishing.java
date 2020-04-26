@@ -20,10 +20,7 @@ import l2server.gameserver.datatables.NpcTable;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
 import l2server.gameserver.model.actor.instance.L2PenaltyMonsterInstance;
 import l2server.gameserver.network.SystemMessageId;
-import l2server.gameserver.network.serverpackets.ExFishingHpRegen;
-import l2server.gameserver.network.serverpackets.ExFishingStartCombat;
-import l2server.gameserver.network.serverpackets.PlaySound;
-import l2server.gameserver.network.serverpackets.SystemMessage;
+import l2server.gameserver.network.serverpackets.*;
 import l2server.gameserver.templates.chars.L2NpcTemplate;
 import l2server.util.Rnd;
 
@@ -103,9 +100,9 @@ public class L2Fishing implements Runnable
 		_fisher.broadcastPacket(efsc);
 		_fisher.sendPacket(new PlaySound(1, "SF_S_01", 0, 0, 0, 0, 0));
 		// Succeeded in getting a bite
-		_fisher.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.GOT_A_BITE));
+		_fisher.sendPacket(new ExShowScreenMessage("Got a bite !", 2000));
 
-		if (_fishAiTask == null)
+        if (_fishAiTask == null)
 		{
 			_fishAiTask = ThreadPoolManager.getInstance().scheduleEffectAtFixedRate(this, 1000, 1000);
 		}

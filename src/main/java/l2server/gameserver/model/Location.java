@@ -16,6 +16,8 @@
 package l2server.gameserver.model;
 
 import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.interfaces.ILocational;
+import l2server.gameserver.model.interfaces.IPositionable;
 
 /**
  * This class ...
@@ -23,7 +25,7 @@ import l2server.gameserver.model.actor.L2Character;
  * @version $Revision: 1.1.4.1 $ $Date: 2005/03/27 15:29:33 $
  */
 
-public final class Location
+public final class Location implements IPositionable
 {
 	private int _x;
 	private int _y;
@@ -79,4 +81,38 @@ public final class Location
 	{
 		return _heading;
 	}
+
+    @Override
+    public ILocational getLocation() {
+        return null;
+    }
+
+    @Override
+    public void setXYZ(int x, int y, int z)
+    {
+        _x = x;
+        _y = y;
+        _z = z;
+    }
+
+    @Override
+    public void setXYZ(ILocational loc)
+    {
+        setXYZ(loc.getX(), loc.getY(), loc.getZ());
+    }
+
+    @Override
+    public void setHeading(int heading)
+    {
+        _heading = heading;
+    }
+
+    @Override
+    public void setLocation(Location loc)
+    {
+        _x = loc.getX();
+        _y = loc.getY();
+        _z = loc.getZ();
+        _heading = loc.getHeading();
+    }
 }

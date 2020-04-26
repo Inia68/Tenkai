@@ -3165,14 +3165,17 @@
           bodypart="none" material="steel" weight="0" crystal_type="none">
     </item>
     <!-- A fancy fishing rod. Receive 50% extra XP/SP when fishing. Reduces fishing time. Consumes 1 Fishing Shot. -->
-    <item id="27632" type="Weapon" name="Fancy Fishing Rod" icon="BranchIcon.icon.weapon_g_fishing_rod" bodypart="none"
-          material="steel"
-          weight="0" crystal_type="none">
-        <set stat="pAtk" val="1" />
-        <set stat="mAtk" val="1" />
-        <set stat="pAtkSpd" val="325" />
-        <baseSub stat="accCombat" val="3.75" />
-    </item>
+	<item id="27632" type="Weapon" name="Fancy Fishing Rod" icon="BranchIcon.icon.weapon_g_fishing_rod" defaultAction="equip"
+		  weaponType="fishingrod"
+		  bodypart="lrhand" randomDamage="1" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" weight="1000"
+		  price="30000"
+		  itemEquipOption="{no_attack}">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<baseSub stat="accCombat" val="3.75" />
+		<baseSub stat="accMagic" val="3.75" />
+		<set stat="pAtkSpd" val="325" />
+	</item>
     <!-- A 1-day fancy fishing rod. Receive 50% extra XP/SP when fishing. Reduces fishing time. Consumes 1 Fishing Shot. -->
     <item id="27633" type="Weapon" name="Fancy Fishing Rod - 1-day" icon="BranchIcon.icon.weapon_g_fishing_rod"
           bodypart="none"

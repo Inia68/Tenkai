@@ -1112,6 +1112,9 @@ public abstract class L2Item extends ListenersContainer
 
 	public int getShotTypeIndex()
 	{
+	    if (this._itemId == 45492) {
+	        return 4;
+        }
 		switch (getDefaultAction())
 		{
 			case soulshot:
@@ -1122,6 +1125,8 @@ public abstract class L2Item extends ListenersContainer
 				return 2;
 			case summon_spiritshot:
 				return 3;
+            case fishingshot:
+                return 4;
 		}
 
 		return -1;

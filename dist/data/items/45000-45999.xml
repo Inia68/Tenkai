@@ -607,14 +607,17 @@
           bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
     </item>
     <!-- A 30-day fishing rod. Consumes 1 Fishing Shot. -->
-    <item id="45492" type="Weapon" name="Normal Fishing Rod - 30-day" icon="icon.weapon_fishing_rod_i03"
-          defaultAction="equip"
-          weaponType="sword" bodypart="rhand" immediateEffect="1" weight="0" soulshots="0" spiritshots="0">
-        <set stat="pAtk" val="1" />
-        <set stat="mAtk" val="1" />
-        <set stat="pAtkSpd" val="325" />
-        <baseSub stat="accCombat" val="3.75" />
-    </item>
+	<item id="45492" type="Weapon" name="Normal Fishing Rod - 30-day" icon="icon.weapon_fishing_rod_i03" defaultAction="equip"
+		  weaponType="fishingrod"
+		  bodypart="lrhand" randomDamage="1" attackRange="80" damageRange="0;0;66;120" immediateEffect="1" weight="1000"
+		  price="30000"
+		  itemEquipOption="{no_attack}">
+		<set stat="pAtk" val="1" />
+		<set stat="mAtk" val="1" />
+		<baseSub stat="accCombat" val="3.75" />
+		<baseSub stat="accMagic" val="3.75" />
+		<set stat="pAtkSpd" val="325" />
+	</item>
     <!-- Open to get a 30-day fishing rod. -->
     <item id="45493" type="Weapon" name="Fishing Rod Pack (30-day)" icon="icon.etc_box_of_adventure_1_i00"
           defaultAction="equip"

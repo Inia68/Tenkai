@@ -91,7 +91,7 @@ public class HandysBlockCheckerEvent extends Quest
 
 				int countBlue = holder.getBlueTeamSize();
 				int countRed = holder.getRedTeamSize();
-				int minMembers = Config.MIN_BLOCK_CHECKER_TEAM_MEMBERS;
+				int minMembers = 1;
 
 				if (countBlue >= minMembers && countRed >= minMembers)
 				{

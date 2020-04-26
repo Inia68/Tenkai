@@ -275,8 +275,8 @@
          collisionHeight="24" fireRes="0" waterRes="0" windRes="0" earthRes="0" holyRes="0" darkRes="0"
          aiType="fighter">
     </npc>
-    <npc id="80215" templateId="33151" name="Menila" serverSideName="true" title="Vote Manager" serverSideTitle="true"
-         level="85" type="L2Npc"
+    <npc id="80215" templateId="34227" name="Menila" serverSideName="true" title="Fishing Manager" serverSideTitle="true"
+         level="85" type="L2Merchant"
          atkRange="40" hpMax="7324" hpReg="9.63" mpMax="2044"
          mpReg="6.99" STR="88" CON="82" DEX="55" INT="79" WIT="78" MEN="78" pAtk="971" mAtk="663" pDef="341" mDef="250"
          pAtkSpd="253"

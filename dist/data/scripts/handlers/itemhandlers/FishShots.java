@@ -71,7 +71,7 @@ public class FishShots implements IItemHandler
 		{
 			//1479 - This fishing shot is not fit for the fishing pole crystal.
 			activeChar.sendPacket(SystemMessage.getSystemMessage(SystemMessageId.WRONG_FISHINGSHOT_GRADE));
-			return;
+
 		}
 
 		if (count < 1)

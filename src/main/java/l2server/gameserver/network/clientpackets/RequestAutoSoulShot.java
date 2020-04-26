@@ -74,7 +74,7 @@ public final class RequestAutoSoulShot extends L2GameClientPacket
 				}
 
 				// Fishingshots are not automatic on retail
-				if (_itemId < 6535 || _itemId > 6540)
+				if (true)
 				{
 					// Attempt to charge first shot on activation
 					if (_itemId == 6645 || _itemId == 6646 || _itemId == 6647 || _itemId == 20332 || _itemId == 20333 ||

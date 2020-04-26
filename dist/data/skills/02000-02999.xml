@@ -2130,8 +2130,8 @@
 		<set name="feed" val="450" />
 	</skill>
 	<skill id="2181" levels="1" name="Item - Fishing Shot">
-		<set name="target" val="TARGET_NONE" />
-		<set name="skillType" val="NOTDONE" />
+		<set name="target" val="TARGET_SELF" />
+		<set name="skillType" val="SOULSHOT" />
 		<set name="operateType" val="OP_ACTIVE" />
 	</skill>
 	<skill id="2182" levels="1" name="Item - Fishing Shot">

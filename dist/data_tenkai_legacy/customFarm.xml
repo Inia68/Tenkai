@@ -164,7 +164,8 @@
 		<itemDrop itemId="4355" min="1" max="1" chance="10" /> <!-- Blue Eva -->
 		<itemDrop itemId="35562" min="25" max="40" chance="100" /> <!-- Energy of Destruction -->
         <itemDrop itemId="36665" min="1" max="1" chance="5" /> <!-- Nerva's Temporary Prison Key -->
-        <itemDrop itemId="18577" min="1" max="1" chance="30" /> <!-- Legendary Life Stone (R99-grade) -->
+		<itemDrop itemId="46537" min="1" max="2" chance="10" /> <!--mystic fragment crystal -->
+		<itemDrop itemId="18577" min="1" max="1" chance="30" /> <!-- Legendary Life Stone (R99-grade) -->
         <dropCategory chance="100">
             <itemDrop itemId="30297" min="2" max="3" chance="70" /> <!-- Superior Giant's Codex -->
             <itemDrop itemId="30298" min="2" max="3" chance="30" /> <!-- Superior Giant's CoDEX - Mastery -->

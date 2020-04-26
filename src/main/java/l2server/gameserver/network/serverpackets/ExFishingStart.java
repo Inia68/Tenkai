@@ -16,6 +16,8 @@
 package l2server.gameserver.network.serverpackets;
 
 import l2server.gameserver.model.actor.L2Character;
+import l2server.gameserver.model.actor.instance.L2PcInstance;
+import l2server.gameserver.model.interfaces.ILocational;
 
 /**
  * Format (ch)ddddd
@@ -24,19 +26,21 @@ import l2server.gameserver.model.actor.L2Character;
  */
 public class ExFishingStart extends L2GameServerPacket
 {
-	private L2Character _activeChar;
-	private int _x, _y, _z, _fishType;
-	private boolean _isNightLure;
+    private final L2PcInstance _player;
+    private final int _fishType;
+    private final ILocational _baitLocation;
 
-	public ExFishingStart(L2Character character, int fishType, int x, int y, int z, boolean isNightLure)
-	{
-		_activeChar = character;
-		_fishType = fishType;
-		_x = x;
-		_y = y;
-		_z = z;
-		_isNightLure = isNightLure;
-	}
+    /**
+     * @param player
+     * @param fishType
+     * @param baitLocation
+     */
+    public ExFishingStart(L2PcInstance player, int fishType, ILocational baitLocation)
+    {
+        _player = player;
+        _fishType = fishType;
+        _baitLocation = baitLocation;
+    }
 
 	/* (non-Javadoc)
 	 * @see l2server.gameserver.serverpackets.ServerBasePacket#writeImpl()
@@ -44,11 +48,11 @@ public class ExFishingStart extends L2GameServerPacket
 	@Override
 	protected final void writeImpl()
 	{
-		writeD(_activeChar.getObjectId());
-		writeC(_fishType); // fish type
-		writeD(_x); // x position
-		writeD(_y); // y position
-		writeD(_z); // z position
-		writeC(_isNightLure ? 0x01 : 0x00); // night lure
-	}
+        writeD(_player.getObjectId());
+        writeC(_fishType);
+        writeD(_baitLocation.getX());
+        writeD(_baitLocation.getY());
+        writeD(_baitLocation.getZ());
+        writeC(0x01); // 0 = newbie, 1 = normal, 2 = night
+    }
 }

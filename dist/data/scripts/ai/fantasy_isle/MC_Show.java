@@ -236,7 +236,7 @@ public class MC_Show extends Quest
 			Log.info("Fantasy Isle: MC show script starting at " + format.format(System.currentTimeMillis() + diff) +
 					" and is scheduled each next 4 hours.");
 		}
-		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new StartMCShow(), diff, 14400000L);
+		ThreadPoolManager.getInstance().scheduleGeneralAtFixedRate(new StartMCShow(), 300000, 1800000);
 	}
 
 	private void autoChat(L2Npc npc, int stringId, int type)

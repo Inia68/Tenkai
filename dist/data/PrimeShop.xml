@@ -44,6 +44,69 @@
 	<item id="1011802" cat="3" paymentType="0" price="150" panelType="4" recommended="1" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
 		<item itemId="26273" count="1" /> <!-- Halloween Outfit -->
 	</item>
+	<item id="1011819" cat="3" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46597" count="1" /> <!-- Dynasty Tunic -->
+	</item>
+	<item id="1011820" cat="3" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46596" count="1" /> <!-- Dynasty Leather Armor -->
+	</item>
+	<item id="1011821" cat="3" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46595" count="1" /> <!-- Dynasty Breastplate -->
+	</item>
+	<item id="1011822" cat="3" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="47223" count="1" /> <!-- Green Archer -->
+	</item>
+	<item id="1011823" cat="3" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="47224" count="1" /> <!-- Red Archer -->
+	</item>
+	<item id="1011824" cat="3" paymentType="0" price="150" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="47225" count="1" /> <!-- Wizard -->
+	</item>
+	<item id="1011825" cat="3" paymentType="0" price="150" panelType="4" recommended="1" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="47363" count="1" /> <!-- Red Nobless -->
+	</item>
+	<item id="1011826" cat="3" paymentType="0" price="150" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="47364" count="1" /> <!-- White Nobless -->
+	</item>
+	<item id="1011827" cat="3" paymentType="0" price="150" panelType="4" recommended="1" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="47228" count="1" /> <!-- Wizard Wine -->
+	</item>
+	<item id="1011828" cat="3" paymentType="0" price="150" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="47229" count="1" /> <!-- Wizard Red -->
+	</item>
+	<item id="1011829" cat="3" paymentType="0" price="150" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="47230" count="1" /> <!-- Blue Musketer -->
+	</item>
+	<item id="1011830" cat="3" paymentType="0" price="150" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="47231" count="1" /> <!-- Red Musketer -->
+	</item>
+	<item id="1011831" cat="3" paymentType="0" price="100" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="47232" count="1" /> <!-- CowBoy Purple -->
+	</item>
+	<item id="1011832" cat="3" paymentType="0" price="30" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46586" count="1" /> <!--  Freya's Tunic Appearance Stone -->
+	</item>
+	<item id="1011833" cat="3" paymentType="0" price="30" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46585" count="1" /> <!--  Freya's Tunic Shoes Stone -->
+	</item>
+	<item id="1011834" cat="3" paymentType="0" price="30" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46584" count="1" /> <!--  Freya's Tunic Gloves Stone -->
+	</item>
+	<item id="1011835" cat="3" paymentType="0" price="90" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46583" count="1" /> <!--  Freya's Tunic Stockings Stone -->
+	</item>
+	<item id="1011836" cat="3" paymentType="0" price="30" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46581" count="1" /> <!--  Kelbim's Leather Boots Appearance Stone -->
+	</item>
+	<item id="1011837" cat="3" paymentType="0" price="30" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46580" count="1" /> <!--  Kelbim's Leather Gloves Appearance Stone -->
+	</item>
+	<item id="1011838" cat="3" paymentType="0" price="30" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46579" count="1" /> <!--  Kelbim's Leather Leggings Appearance Stone -->
+	</item>
+	<item id="1011839" cat="3" paymentType="0" price="30" panelType="0" recommended="0" startSale="315558000" endSale="2127452400" dayOfWeek="127" startHour="0" startMinute="0" stopHour="23" stopMinute="59" stock="-1" maxStock="-1" salePercent="0" minLevel="0" maxLevel="0" minBirthday="0" maxBirthday="0" restrictionDay="0" availableCount="0">
+		<item itemId="46578" count="1" /> <!--  Kelbim's Leather Armor Appearance Stone -->
+	</item>
 	<!-- End Cosmetic -->
 
 	<!-- Special - 3 -->

@@ -214,7 +214,7 @@ import handlers.skillhandlers.Detection;
 import handlers.skillhandlers.Disablers;
 import handlers.skillhandlers.Dummy;
 import handlers.skillhandlers.Extractable;
-import handlers.skillhandlers.Fishing;
+import handlers.skillhandlers.FishingOld;
 import handlers.skillhandlers.FishingSkill;
 import handlers.skillhandlers.GetPlayer;
 import handlers.skillhandlers.GiveReco;
@@ -515,7 +515,7 @@ public class MasterHandler
 		SkillHandler.getInstance().registerSkillHandler(new TakeFort());
 		SkillHandler.getInstance().registerSkillHandler(new Unlock());
 		SkillHandler.getInstance().registerSkillHandler(new Craft());
-		SkillHandler.getInstance().registerSkillHandler(new Fishing());
+		SkillHandler.getInstance().registerSkillHandler(new FishingOld());
 		SkillHandler.getInstance().registerSkillHandler(new FishingSkill());
 		SkillHandler.getInstance().registerSkillHandler(new BeastSkills());
 		SkillHandler.getInstance().registerSkillHandler(new DeluxeKey());

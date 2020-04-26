@@ -5869,12 +5869,9 @@
         <table name="#elementRes">0 0 0 6 12 18 24 30 36 36</table>
         <table name="#mpConsume">0 0 0 0 4 4 3 3 3 3</table>
         <table name="#reflectRes">0 0 0 0 4 4 5 5 5 5</table>
-		<table name="#baseStr">0 0 0 1 2 3 3 4 4 4</table>
-		<table name="#baseDex">0 0 0 1 2 3 3 4 4 4</table>
-		<table name="#baseWit">0 0 0 1 2 3 3 4 5 5</table>
-		<table name="#baseMen">0 0 0 1 2 2 3 3 4 4</table>
-		<table name="#baseInt">0 0 0 1 2 3 3 4 4 4</table>
-        <table name="#baseCon">0 0 0 1 2 2 3 3 4 4</table>
+        <table name="#baseStr">10 10 10 4 4 4 13 14 14 4</table>
+        <table name="#baseDex">0 0 0 1 4 4 4 4 4 4</table>
+        <table name="#baseCon">0 0 0 1 4 4 4 4 4 4</table>
         <table name="#skillCol">0 0 0 0 0 0 0 3 3 3</table>
         <table name="#damageReduction">0 0 0 0 0 0 0 0 3 3</table>
         <set name="target" val="TARGET_SELF" />
@@ -5897,9 +5894,9 @@
             <baseAdd stat="STR" val="#baseStr" />
             <baseAdd stat="DEX" val="#baseDex" />
             <baseAdd stat="CON" val="#baseCon" />
-            <baseAdd stat="INT" val="#baseInt" />
-            <baseAdd stat="WIT" val="#baseWit" />
-            <baseAdd stat="MEN" val="#baseMen" />
+            <baseAdd stat="INT" val="#baseStr" />
+            <baseAdd stat="WIT" val="#baseStr" />
+            <baseAdd stat="MEN" val="#baseCon" />
             <subPercent stat="pReuse" val="#skillCol" />
             <subPercent stat="mReuse" val="#skillCol" />
             <addPercent stat="pvpPhysDef" val="#damageReduction" />

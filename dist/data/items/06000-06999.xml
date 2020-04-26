@@ -3308,7 +3308,6 @@
     <item id="6535" type="EtcItem" name="Corroded Fishing Shot (No-grade)" icon="icon.etc_spirit_bullet_fish_i00"
           defaultAction="fishingshot"
           immediateEffect="1" weight="3" price="3" enchantEnabled="1" isStackable="true" handler="FishShots">
-        <skill id="2181" level="1" /> <!-- Item - Fishing Shot -->
     </item>
     <!-- Corroded item. Can be traded for a pack through the Aden Reconstruction Society, and can also be sold in shops. -->
     <item id="6536" type="EtcItem" name="Corroded Fishing Shot (D-grade)" icon="icon.etc_spirit_bullet_fish_i01"
