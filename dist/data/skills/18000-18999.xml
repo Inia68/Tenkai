@@ -2166,9 +2166,12 @@
     <skill id="18380" levels="2" name="Mysterious Talisman - STR">
         <table name="#name">Player Commendation - Talisman - STR;Mysterious Talisman - STR</table>
         <set name="name" val="#name" />
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<baseAdd stat="STR" val="5" />
+		</for>
     </skill>
     <!--
 		Level 1: INT + 5 when equipped.
@@ -2177,9 +2180,12 @@
     <skill id="18381" levels="2" name="Mysterious Talisman - INT">
         <table name="#name">Player Commendation - Talisman - INT;Mysterious Talisman - INT</table>
         <set name="name" val="#name" />
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<baseAdd stat="INT" val="5" />
+		</for>
     </skill>
     <!--
 		Level 1: DEX + 5 when equipped.
@@ -2188,9 +2194,12 @@
     <skill id="18382" levels="2" name="Mysterious Talisman - DEX">
         <table name="#name">Player Commendation - Talisman - DEX;Mysterious Talisman - DEX</table>
         <set name="name" val="#name" />
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<baseAdd stat="DEX" val="5" />
+		</for>
     </skill>
     <!--
 		Level 1: WIT + 5 when equipped.
@@ -2199,9 +2208,12 @@
     <skill id="18383" levels="2" name="Mysterious Talisman - WIT">
         <table name="#name">Player Commendation - Talisman - WIT;Mysterious Talisman - WIT</table>
         <set name="name" val="#name" />
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<baseAdd stat="WIT" val="5" />
+		</for>
     </skill>
     <!--
 		Level 1: CON + 5 when equipped.
@@ -2210,9 +2222,12 @@
     <skill id="18384" levels="2" name="Mysterious Talisman - CON">
         <table name="#name">Player Commendation - Talisman - CON;Mysterious Talisman - CON</table>
         <set name="name" val="#name" />
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<baseAdd stat="CON" val="5" />
+		</for>
     </skill>
     <!--
 		Level 1: MEN + 5 when equipped.
@@ -2221,17 +2236,19 @@
     <skill id="18385" levels="2" name="Mysterious Talisman - MEN">
         <table name="#name">Player Commendation - Talisman - MEN;Mysterious Talisman - MEN</table>
         <set name="name" val="#name" />
-        <set name="target" val="TARGET_NONE" />
-        <set name="skillType" val="NOTDONE" />
+        <set name="target" val="TARGET_SELF" />
+        <set name="skillType" val="BUFF" />
         <set name="operateType" val="OP_PASSIVE" />
+		<for>
+			<baseAdd stat="MEN" val="5" />
+		</for>
     </skill>
     <!--
 		Level 1: Attack Attribute + 50 when equipped.
 		Level 2: Attack Attributes are boosted by 50 when the Talisman is worn.
 	-->
     <skill id="18386" levels="2" name="Mysterious Talisman - Attack Attribute">
-        <table name="#name">Player Commendation - Talisman - Attack Attribute;Mysterious Talisman - Attack Attribute
-        </table>
+        <table name="#name">Player Commendation - Talisman - Attack Attribute;Mysterious Talisman - Attack Attribute</table>
         <set name="name" val="#name" />
         <set name="target" val="TARGET_NONE" />
         <set name="skillType" val="NOTDONE" />
