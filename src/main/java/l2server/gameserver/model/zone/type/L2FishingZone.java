@@ -75,16 +75,8 @@ public class L2FishingZone extends L2ZoneType
                     {
                         if (fishing.canFish() && !fishing.isFishing())
                         {
-                            if (fishing.isAtValidLocation())
-                            {
-                                player.sendPacket(ExAutoFishAvailable.YES);
-                            }
-                            else
-                            {
-                                player.sendPacket(ExAutoFishAvailable.NO);
-                            }
+                            player.sendPacket(ExAutoFishAvailable.YES);
                         }
-                        ThreadPoolManager.getInstance().scheduleGeneral(this, 1500);
                     }
                     else
                     {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<list maintainEnchantment="true">
+<list>
 
     <item>
         <!-- Ingredients -->
 		<ingredient id="4355" count="20" /> <!-- Blue Eva -->
-		<production count="1" id="47557" />    <!-- Master Fishing Rod - Stage 1 -->
+		<ingredient count="1" id="47557" />    <!-- Master Fishing Rod - Stage 1 -->
 		<!-- Products -->
 		<production count="1" id="47558" />    <!-- Master Fishing Rod - Stage 2 -->
     </item>
@@ -12,7 +12,7 @@
 	<item>
 		<!-- Ingredients -->
 		<ingredient id="4355" count="20" /> <!-- Blue Eva -->
-		<production count="1" id="47558" />    <!-- Master Fishing Rod - Stage 2 -->
+		<ingredient count="1" id="47558" />    <!-- Master Fishing Rod - Stage 2 -->
 		<!-- Products -->
 		<production count="1" id="47559" />    <!-- Master Fishing Rod - Stage 3 -->
 	</item>
@@ -21,7 +21,7 @@
 	<item>
 		<!-- Ingredients -->
 		<ingredient id="4355" count="20" /> <!-- Blue Eva -->
-		<production count="1" id="47559" />    <!-- Master Fishing Rod - Stage 3 -->
+		<ingredient count="1" id="47559" />    <!-- Master Fishing Rod - Stage 3 -->
 		<!-- Products -->
 		<production count="1" id="47560"/>    <!-- Master Fishing Rod - Stage 4 -->
 	</item>
@@ -29,7 +29,7 @@
 	<item>
 		<!-- Ingredients -->
 		<ingredient id="4355" count="20" /> <!-- Blue Eva -->
-		<production count="1" id="47560" />    <!-- Master Fishing Rod - Stage 4 -->
+		<ingredient count="1" id="47560" />    <!-- Master Fishing Rod - Stage 4 -->
 		<!-- Products -->
 		<production count="1" id="47561"/>    <!-- Master Fishing Rod - Stage 5 -->
 	</item>

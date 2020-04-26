@@ -269,7 +269,7 @@ public class Fishing
 		try
 		{
 			final L2ItemInstance bait = _player.getInventory().getPaperdollItem(Inventory.PAPERDOLL_LHAND);
-			if ((consumeBait && bait == null) || bait.getCount() <= 0)
+			if (bait == null || (consumeBait && bait == null) || bait.getCount() <= 0)
 			{
 				reason = ExFishingEnd.FishingEndReason.LOSE; // no bait - no reward
 				return;
