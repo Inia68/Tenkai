@@ -2575,7 +2575,6 @@
           material="steel"
           weight="0" crystal_type="none">
     </item>
-<<<<<<< HEAD
     <!-- STR +5 when wearing the Talisman. Effect does not stack with identical ones. -->
     <item id="47435" type="Armor" name="Mysterious Talisman - STR - 2-hour" icon="icon.npoint_talisman_stat"
           defaultAction="equip"
@@ -2607,7 +2606,6 @@
           defaultAction="equip"
           bodypart="deco1" crystalType="none" material="steel" weight="0" time="120">
     </item>
-=======
 	<!--
 	Dimensional Item
 	STR +5 when wearing the Talisman. Effect does not stack with identical ones.
@@ -2662,7 +2660,6 @@
 		  bodypart="deco1" crystalType="none" material="steel" weight="0" time="120">
 		<skill id="18385" level="2"/>
 	</item>
->>>>>>> origin/master
     <!-- Attack Attribute Bonus +50 when wearing the Talisman. Effect does not stack with identical ones. -->
     <item id="47441" type="Weapon" name="Mysterious Talisman - Attack Attribute - 2-hour"
           icon="icon.npoint_talisman_stat" bodypart="none"
