@@ -10394,7 +10394,7 @@ public class L2PcInstance extends L2Playable {
         if (calendar.getTimeInMillis() > receiveDate) {
             canBeRewarded = true;
             // Reset index if max is reached.
-            if (rewardIndex >= AttendanceTable.getInstance().getPizeCount()) {
+            if (rewardIndex >= AttendanceRewardData.getInstance().getRewardsCount()) {
                 rewardIndex = 0;
             }
         } else {
