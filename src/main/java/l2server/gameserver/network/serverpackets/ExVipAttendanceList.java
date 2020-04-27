@@ -1,11 +1,9 @@
 package l2server.gameserver.network.serverpackets;
 
-import l2server.gameserver.datatables.AttendanceRewardData;
 import l2server.gameserver.datatables.AttendanceTable;
 import l2server.gameserver.datatables.ItemTable;
 import l2server.gameserver.model.AttendanceInfoHolder;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.holder.ItemHolder;
 
 import java.util.List;
 
@@ -34,12 +32,13 @@ public class ExVipAttendanceList  extends L2GameServerPacket
         writeC(0x01);
         writeC(_available ? 0x01 : 0x00); // player can receive reward today?
         writeC(250);
-        writeC(AttendanceRewardData.getInstance().getRewardsCount()); // reward size
+        writeC(AttendanceTable.getInstance().getPizeCount()); // reward size
         int rewardCounter = 0;
-        for (ItemHolder item: AttendanceRewardData.getInstance().getRewards()) {
+        final List<AttendanceTable.AttendanceItem> reward = AttendanceTable.getInstance().getRewards(_index);
+        for (AttendanceTable.AttendanceItem item: reward) {
             rewardCounter++;
             writeD(item.getId());
-            writeQ(item.getCount());
+            writeQ(item.getAmount());
             writeC(0x01); // is unknown?
             writeC((rewardCounter % 7) == 0 ? 0x01 : 0x00); // is last in row?
         };

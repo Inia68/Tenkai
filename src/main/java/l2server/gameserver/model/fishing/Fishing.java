@@ -30,9 +30,7 @@ import l2server.gameserver.model.L2ItemInstance;
 import l2server.gameserver.model.Location;
 import l2server.gameserver.model.actor.L2Character;
 import l2server.gameserver.model.actor.instance.L2PcInstance;
-import l2server.gameserver.model.event.Containers;
 import l2server.gameserver.model.event.EventDispatcher;
-import l2server.gameserver.model.event.impl.creature.player.OnPlayerFishing;
 import l2server.gameserver.model.interfaces.ILocational;
 import l2server.gameserver.model.itemcontainer.Inventory;
 import l2server.gameserver.model.zone.L2ZoneType;
@@ -309,7 +307,7 @@ public class Fishing
 			if (consumeBait)
 			{
 			    // Daily mission
-				EventDispatcher.getInstance().notifyEventAsync(new OnPlayerFishing(_player, reason), Containers.Players());
+				// EventDispatcher.getInstance().notifyEventAsync(new OnPlayerFishing(_player, reason), _player);
 			}
 		}
 		finally

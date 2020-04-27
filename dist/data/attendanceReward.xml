@@ -1,0 +1,37 @@
+<list>
+        <prizeCategory index="0">
+            <item id="57" amount="1000000"/> <!-- Adena -->
+            <item id="4037" amount="100"/> <!-- Coin Of Luck -->
+			<item id="4355" amount="100000"/> <!-- Blue Eva -->
+       	</prizeCategory>
+	<prizeCategory index="1">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+		<item id="4355" amount="100000"/> <!-- Blue Eva -->
+	</prizeCategory>
+	<prizeCategory index="2">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+		<item id="4355" amount="100000"/> <!-- Blue Eva -->
+	</prizeCategory>
+	<prizeCategory index="3">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+		<item id="4355" amount="100000"/> <!-- Blue Eva -->
+	</prizeCategory>
+	<prizeCategory index="4">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+		<item id="4355" amount="100000"/> <!-- Blue Eva -->
+	</prizeCategory>
+	<prizeCategory index="5">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+		<item id="4355" amount="100000"/> <!-- Blue Eva -->
+	</prizeCategory>
+	<prizeCategory index="6">
+		<item id="57" amount="2000000"/> <!-- Adena -->
+		<item id="4037" amount= "200"/> <!-- Coin Of Luck -->
+		<item id="4355" amount="100000"/> <!-- Blue Eva -->
+	</prizeCategory>
+</list>

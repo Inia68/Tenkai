@@ -4,7 +4,6 @@ import l2server.gameserver.model.event.impl.IBaseEvent;
 import l2server.gameserver.model.event.impl.OnDayNightChange;
 import l2server.gameserver.model.event.impl.creature.OnCreatureKilled;
 import l2server.gameserver.model.event.impl.creature.npc.OnAttackableKill;
-import l2server.gameserver.model.event.impl.creature.player.OnPlayerFishing;
 import l2server.gameserver.model.event.impl.creature.player.OnPlayerLevelChanged;
 import l2server.gameserver.model.event.impl.creature.player.OnPlayerPvPKill;
 import l2server.gameserver.model.event.impl.creature.player.event.OnEventParticipate;
@@ -17,7 +16,6 @@ public enum EventType
      ON_ATTACKABLE_KILL(OnAttackableKill.class, void.class),
 
     ON_EVENT_PARTICIPATE(OnEventParticipate.class, void.class),
-    ON_PLAYER_FISHING(OnPlayerFishing.class, void.class),
 
     ON_PLAYER_LEVEL_CHANGED(OnPlayerLevelChanged.class, void.class),
     ON_PLAYER_PVP_KILL(OnPlayerPvPKill.class, void.class),

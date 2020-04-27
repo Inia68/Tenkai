@@ -989,60 +989,29 @@
         <set stat="pAtkSpd" val="325" />
     </item>
     <!-- For 30 min., WIT + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
-    <item id="38222" type="EtcItem" name="Fish Stew - WIT" icon="icon.fish_stew_buff"
-		  defaultAction="skill_reduce"
-		  etcitemType="potion" immediateEffect="1" weight="5" reuseDelay="30000" isTradable="false" isDropable="false"
-		  isSellable="false" handler="ItemSkills"
-		  isDepositable="false" isStackable="true" isPremium="false" isOlyRestricted="true">
-		<skill id="17387" level="1" /> <!-- Fish Stew - WIT -->
+    <item id="38222" type="EtcItem" name="Fish Stew - WIT" icon="icon.fish_stew_buff" weight="0">
     </item>
     <!-- For 30 min., INT + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
-    <item id="38223" type="EtcItem" name="Fish Stew - Int" icon="icon.fish_stew_buff"
-		  defaultAction="skill_reduce"
-		  etcitemType="potion" immediateEffect="1" weight="5" reuseDelay="30000" isTradable="false" isDropable="false"
-		  isSellable="false" handler="ItemSkills"
-		  isDepositable="false" isStackable="true" isPremium="false" isOlyRestricted="true">
-		<skill id="17388" level="1" /> <!-- Fish Stew - INT -->
+    <item id="38223" type="EtcItem" name="Fish Stew - Int" icon="icon.fish_stew_buff" weight="0">
     </item>
     <!-- For 30 min., MEN + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
-    <item id="38224" type="EtcItem" name="Fish Stew - MEN" icon="icon.fish_stew_buff"
-		  defaultAction="skill_reduce"
-		  etcitemType="potion" immediateEffect="1" weight="5" reuseDelay="30000" isTradable="false" isDropable="false"
-		  isSellable="false" handler="ItemSkills"
-		  isDepositable="false" isStackable="true" isPremium="false" isOlyRestricted="true">
-		<skill id="17389" level="1" /> <!-- Fish Stew - MEN -->
+    <item id="38224" type="EtcItem" name="Fish Stew - MEN" icon="icon.fish_stew_buff" weight="0">
     </item>
     <!-- For 30 min., DEX + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
-    <item id="38225" type="EtcItem" name="Fish Stew - DEX" icon="icon.fish_stew_buff"
-		defaultAction="skill_reduce"
-		etcitemType="potion" immediateEffect="1" weight="5" reuseDelay="30000" isTradable="false" isDropable="false"
-		isSellable="false" handler="ItemSkills"
-		isDepositable="false" isStackable="true" isPremium="false" isOlyRestricted="true">
-		<skill id="17390" level="1" /> <!-- Fish Stew - Dex -->
+    <item id="38225" type="EtcItem" name="Fish Stew - DEX" icon="icon.fish_stew_buff" weight="0">
     </item>
     <!-- For 30 min., STR + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
-	<item id="38226" type="EtcItem" name="Fish Stew - Str" icon="icon.fish_stew_buff"
-		  defaultAction="skill_reduce"
-		  etcitemType="potion" immediateEffect="1" weight="5" reuseDelay="30000" isTradable="false" isDropable="false"
-		  isSellable="false" handler="ItemSkills"
-		  isDepositable="false" isStackable="true" isPremium="false" isOlyRestricted="true">
-		<skill id="17391" level="1" /> <!-- Fish Stew - Str -->
-	</item>
-
-	<!-- For 30 min., CON + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
-    <item id="38227" type="EtcItem" name="Fish Stew - CON" icon="icon.fish_stew_buff"
-		  defaultAction="skill_reduce"
-		  etcitemType="potion" immediateEffect="1" weight="5" reuseDelay="30000" isTradable="false" isDropable="false"
-		  isSellable="false" handler="ItemSkills"
-		  isDepositable="false" isStackable="true" isPremium="false" isOlyRestricted="true">
-		<skill id="17392" level="1" /> <!-- Fish Stew - Con -->
+    <item id="38226" type="EtcItem" name="Fish Stew - Str" icon="icon.fish_stew_buff" weight="0">
+    </item>
+    <!-- For 30 min., CON + 3. Using different fish stews applies the effect of one. Cooldown is 5min. -->
+    <item id="38227" type="EtcItem" name="Fish Stew - CON" icon="icon.fish_stew_buff" weight="0">
     </item>
     <!-- STR + 3. Female only. -->
     <item id="38228" type="Armor" name="Lady's Hairpin - Str" icon="icon.accessory_hairpin_i00" defaultAction="equip"
           bodypart="hairall"
           immediateEffect="1" weight="10" price="50000">
         <enchant stat="mDef" val="0" />
-		<skill id="9554" level="1" /> <!-- Hair Accessory: STR -->
+        <skill id="9554" level="1" /> <!-- Hair Accessory: STR -->
     </item>
     <!-- DEX + 3. Female only. -->
     <item id="38229" type="Armor" name="Lady's Hairpin - DEX" icon="icon.accessory_hairpin_i00" defaultAction="equip"
