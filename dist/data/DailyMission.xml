@@ -112,4 +112,12 @@
 		</items>
 	</reward>
 
+	<reward id="231" reward_id="611" name="Fisher" requiredCompletion="3" isOneTime="false">
+		<handler name="fishing" />
+		<items>
+			<item id="27593" count="1" />
+			<item id="27603" count="1" />
+		</items>
+	</reward>
+
 </list>

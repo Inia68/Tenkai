@@ -17,8 +17,6 @@ public class RequestVipAttendanceItemList extends L2GameClientPacket
 	@Override
 	public void runImpl()
 	{
-		// TODO
-		Log.info(getType() + " packet was received from " + getClient() + ".");
         final L2PcInstance player = getClient().getActiveChar();
         if (player == null)
         {
